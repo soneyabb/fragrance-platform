@@ -1,0 +1,9 @@
+streamlit
+pandas
+plotly
+requests
+pytrends
+praw
+networkx
+pyvis
+sqlalchemy
