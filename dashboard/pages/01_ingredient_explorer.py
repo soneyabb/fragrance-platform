@@ -19,11 +19,15 @@ st.set_page_config(
 # ── 전역 CSS ─────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-html, body, [class*="css"] {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Inter', sans-serif !important;
 }
+
+/* 타이틀 및 설명 */
+.pg-title { font-size: 42px; font-weight: 800; color: #1e2022; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+.pg-desc { color: #6b7280; margin-bottom: 2.5rem; font-size: 16px; }
 
 /* 카드 컨테이너 */
 .ing-card {
@@ -263,8 +267,14 @@ html, body, [class*="css"] {
 .safety-m { font-size: 18px; font-weight: 700; color: #c53030; margin-bottom: 8px; }
 .safety-s { font-size: 16px; color: #4a5568; line-height: 1.7; }
 
-/* 사이드바 */
-[data-testid="stSidebar"] { background: #faf9f6; }
+/* 사이드바 통일 */
+[data-testid="stSidebar"] {
+    background-color: #1e2022 !important;
+}
+[data-testid="stSidebarNav"] span {
+    color: #f0ece6 !important;
+    font-weight: 500;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -654,8 +664,8 @@ def tab_industry(ing):
 
 # ── 메인 ─────────────────────────────────────────────────────────────────────
 def main():
-    st.title("🔍 Ingredient Explorer")
-    st.markdown("---")
+    st.markdown('<div class="pg-title">🔍 Ingredient Explorer</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pg-desc">조향 원료의 화학적 데이터와 감각 분석 정보를 탐색하는 고급 라이브러리입니다.</div>', unsafe_allow_html=True)
 
     df = load_data()
     if df.empty:
