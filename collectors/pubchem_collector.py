@@ -1,149 +1,223 @@
+"""
+pubchem_collector.py (v2)
+--------------------------
+개선사항:
+  - 검색 3단계: 학명 → 주성분 → 영문명 순서로 시도
+  - 조합향료/합성향료 자동 감지 후 스킵
+  - 동물성 원료는 주성분명으로 검색
+  - 원본 CSV 절대 수정 안 함 → data/raw/pubchem_raw.csv 에만 저장
+
+실행:
+    python collectors/pubchem_collector.py
+"""
+
 import requests
 import pandas as pd
 import time
 import os
 import re
 
-# PubChem PUG REST API 베이스 URL
-BASE_URL = "https://pubchem.ncbi.nlm.nih.gov/rest/pug"
+# ── 경로 ──────────────────────────────────────────────────
+BASE_DIR   = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INPUT_CSV  = os.path.join(BASE_DIR, "data", "raw", "fragrance_ingredients_v4.csv")
+OUTPUT_CSV = os.path.join(BASE_DIR, "data", "raw", "pubchem_raw.csv")
+BASE_URL   = "https://pubchem.ncbi.nlm.nih.gov/rest/pug"
 
-def get_cas_from_synonyms(cid):
-    """
-    CID를 사용하여 PubChem에서 Synonyms를 가져오고 CAS 번호를 추출합니다.
-    """
-    url = f"{BASE_URL}/compound/cid/{cid}/synonyms/JSON"
+# ── 조합/합성향료: 스킵 대상 ──────────────────────────────
+SYNTHETIC_EXTRACTION = {
+    "조합 향료", "조합향료", "합성향료", "합성향료(합성)",
+    "합성", "합성향료 ", "조합향료 "
+}
+SYNTHETIC_NAMES = {
+    "Green Note", "Sea Scent", "Aldehydal", "White Musk"
+}
+
+# ── 동물성: 주성분으로 검색 ───────────────────────────────
+ANIMAL_OVERRIDE = {
+    "Musk":         "Muscone",
+    "Civet Cat Oil":"Civetone",
+    "Beaver Oil":   "Castoramine",
+    "Amber":        "Ambroxan",
+}
+
+# ── API 함수 ──────────────────────────────────────────────
+
+def search_cid(query: str) -> str | None:
+    """단일 쿼리로 CID 검색. 실패 시 None."""
+    url = f"{BASE_URL}/compound/name/{requests.utils.quote(query.strip())}/cids/JSON"
     try:
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            synonyms = data.get('InformationList', {}).get('Information', [{}])[0].get('Synonym', [])
-            
-            # CAS 번호 패턴 (예: 123-45-6)
-            cas_pattern = re.compile(r'^\d{2,7}-\d{2}-\d$')
-            for synonym in synonyms:
-                if cas_pattern.match(synonym):
-                    return synonym
-        return "N/A"
-    except Exception:
-        return "N/A"
-
-def get_pubchem_data(name, scientific_name=None):
-    """
-    원료명으로 CID를 조회하고, 해당 CID로 화학 정보를 수집합니다.
-    검색 실패 시 학명이나 핵심 단어로 재시도합니다.
-    """
-    # 초기값 설정
-    info = {
-        "pubchem_cid": "N/A",
-        "cas_number": "N/A",
-        "molecular_formula": "N/A",
-        "molecular_weight": "N/A"
-    }
-
-    # 검색 후보 리스트 생성
-    search_candidates = [name]
-    
-    # 1. 학명이 있으면 추가
-    if scientific_name and str(scientific_name) != 'nan' and scientific_name != ':':
-        # 학명에서 저자명(L., Risso 등) 제외 시도
-        clean_sci = scientific_name.split(' ')[0:2]
-        if len(clean_sci) >= 2:
-            search_candidates.append(' '.join(clean_sci))
-        search_candidates.append(scientific_name)
-    
-    # 2. 이름의 마지막 단어 (예: Alpine Lavender -> Lavender)
-    if ' ' in name:
-        search_candidates.append(name.split(' ')[-1])
-        
-    # 3. 이름의 첫 단어 (예: Bitter Orange Flower -> Orange)
-    if ' ' in name:
-        search_candidates.append(name.split(' ')[0])
-
-    # 중복 제거 및 유효성 확인
-    search_candidates = list(dict.fromkeys([c for c in search_candidates if c and len(c) > 1]))
-
-    cid = None
-    for candidate in search_candidates:
-        cid_url = f"{BASE_URL}/compound/name/{candidate}/cids/JSON"
-        try:
-            response = requests.get(cid_url, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                cid = data.get('IdentifierList', {}).get('CID', [None])[0]
-                if cid:
-                    info["pubchem_cid"] = cid
-                    break
-        except Exception:
-            continue
-        time.sleep(0.2) # 재시도 사이 짧은 지연
-
-    if not cid:
-        return info
-
-    # 2. 속성 정보 조회 (Formula, Weight)
-    props_url = f"{BASE_URL}/compound/cid/{info['pubchem_cid']}/property/MolecularFormula,MolecularWeight/JSON"
-    try:
-        time.sleep(0.5) # API 호출 사이 딜레이
-        response = requests.get(props_url, timeout=10)
-        if response.status_code == 200:
-            data = response.json()
-            props = data.get('PropertyTable', {}).get('Properties', [{}])[0]
-            info["molecular_formula"] = props.get("MolecularFormula", "N/A")
-            info["molecular_weight"] = props.get("MolecularWeight", "N/A")
+        r = requests.get(url, timeout=12)
+        if r.status_code == 200:
+            cids = r.json().get("IdentifierList", {}).get("CID", [])
+            return str(cids[0]) if cids else None
     except Exception:
         pass
+    return None
 
-    # 3. CAS 번호 조회
-    time.sleep(0.5) # API 호출 사이 딜레이
-    info["cas_number"] = get_cas_from_synonyms(info["pubchem_cid"])
 
-    return info
+def search_cid_multi(candidates: list[str]) -> tuple[str | None, str]:
+    """
+    후보 쿼리 목록을 순서대로 시도.
+    성공한 첫 번째 CID와 사용된 쿼리를 반환.
+    """
+    for query in candidates:
+        if not query or query.strip() in ("N/A", ":", "", "nan"):
+            continue
+        cid = search_cid(query)
+        if cid:
+            return cid, query
+        time.sleep(0.3)
+    return None, ""
+
+
+def get_properties(cid: str) -> dict:
+    props = "MolecularFormula,MolecularWeight,IUPACName,IsomericSMILES"
+    url = f"{BASE_URL}/compound/cid/{cid}/property/{props}/JSON"
+    try:
+        r = requests.get(url, timeout=12)
+        if r.status_code == 200:
+            p = r.json().get("PropertyTable", {}).get("Properties", [{}])[0]
+            return {
+                "molecular_formula": p.get("MolecularFormula", "N/A"),
+                "molecular_weight":  str(p.get("MolecularWeight", "N/A")),
+                "iupac_name":        p.get("IUPACName", "N/A"),
+                "smiles":            p.get("IsomericSMILES", "N/A"),
+            }
+    except Exception:
+        pass
+    return {}
+
+
+def get_cas(cid: str) -> str:
+    url = f"{BASE_URL}/compound/cid/{cid}/synonyms/JSON"
+    try:
+        r = requests.get(url, timeout=12)
+        if r.status_code == 200:
+            syns = (
+                r.json()
+                .get("InformationList", {})
+                .get("Information", [{}])[0]
+                .get("Synonym", [])
+            )
+            for s in syns:
+                parts = s.split("-")
+                if len(parts) == 3 and all(p.isdigit() for p in parts):
+                    return s
+    except Exception:
+        pass
+    return "N/A"
+
+
+def first_component(raw: str) -> str:
+    """'Linalyl acetate, Linalool, ...' 에서 첫 번째 성분명만 추출."""
+    if not raw or str(raw).strip() in ("N/A", ":", "nan", ""):
+        return ""
+    # 'EO의 xx%' 같은 설명 제거
+    cleaned = re.split(r"EO의|의 ", str(raw))[0]
+    first = re.split(r"[,·/]", cleaned)[0].strip()
+    return first
+
+
+def clean_scientific(sci: str) -> str:
+    """학명에서 명명자(저자) 제거 → 속명+종명만 반환."""
+    if not sci or str(sci).strip() in ("N/A", ":", "nan", ""):
+        return ""
+    # 예) "Citrus bergamia Risso" → "Citrus bergamia"
+    parts = str(sci).strip().split()
+    if len(parts) >= 2:
+        return " ".join(parts[:2])
+    return str(sci).strip()
+
+
+# ── 메인 ──────────────────────────────────────────────────
 
 def main():
-    input_file = "data/raw/fragrance_ingredients_v4.csv"
-    output_file = "data/raw/pubchem_raw.csv"
-
-    # 파일 읽기 (첫 줄이 파일명이므로 skiprows=1)
-    if not os.path.exists(input_file):
-        print(f"Error: {input_file} 파일을 찾을 수 없습니다.")
-        return
-
-    df = pd.read_csv(input_file, skiprows=1)
-    
-    # 중복 제거된 원료명 목록 (학명 포함하여 순회)
-    ingredients_to_process = df[['name', 'scientific_name']].drop_duplicates()
-    total = len(ingredients_to_process)
-    
+    print(f"[INFO] 원본 파일 로드: {INPUT_CSV}\n")
+    df = pd.read_csv(INPUT_CSV, skiprows=1)
     results = []
-    
-    print(f"총 {total}개의 원료 정보를 PubChem에서 수집을 시작합니다...")
+    total = len(df)
+    success_count = 0
+    skip_count = 0
 
-    for i, (_, row) in enumerate(ingredients_to_process.iterrows(), 1):
-        name = row['name']
-        sci_name = row['scientific_name']
-        
-        # 데이터 수집
-        pubchem_info = get_pubchem_data(name, sci_name)
-        
-        # 결과 결합
-        result_row = {
-            "name": name,
-            **pubchem_info
+    for _, row in df.iterrows():
+        name       = str(row["name"]).strip()
+        sci_raw    = str(row.get("scientific_name", "")).strip()
+        comp_raw   = str(row.get("main_components", "")).strip()
+        method_raw = str(row.get("extraction_method", "")).strip()
+        idx        = _ + 1
+
+        print(f"[{idx:02d}/{total}] {name:<25}", end="  ")
+
+        base = {
+            "name":             name,
+            "pubchem_cid":      "N/A",
+            "cas_number":       "N/A",
+            "molecular_formula":"N/A",
+            "molecular_weight": "N/A",
+            "iupac_name":       "N/A",
+            "smiles":           "N/A",
+            "pubchem_note":     "",
         }
-        results.append(result_row)
-        
-        # 진행 상황 출력
-        cid_str = f"CID {pubchem_info['pubchem_cid']}" if pubchem_info['pubchem_cid'] != "N/A" else "Not Found"
-        print(f"[{i}/{total}] {name} → {cid_str}")
-        
-        # API 부하 방지를 위한 필수 딜레이
-        time.sleep(0.5)
 
-    # 결과 저장
-    result_df = pd.DataFrame(results)
-    result_df.to_csv(output_file, index=False, encoding="utf-8-sig")
-    
-    print(f"\n수집 완료! 결과가 '{output_file}'에 저장되었습니다.")
+        # ── 1) 조합/합성향료 스킵 ─────────────────────────
+        is_synthetic = (
+            name in SYNTHETIC_NAMES
+            or method_raw in SYNTHETIC_EXTRACTION
+        )
+        if is_synthetic:
+            base["pubchem_note"] = "synthetic_blend — PubChem 수집 불가"
+            results.append(base)
+            print("→ synthetic_blend 스킵")
+            skip_count += 1
+            continue
+
+        # ── 2) 동물성: override 검색명 사용 ──────────────
+        if name in ANIMAL_OVERRIDE:
+            override = ANIMAL_OVERRIDE[name]
+            cid, used = search_cid_multi([override])
+            note = f"동물성 — 주성분({override}) 기준"
+        else:
+            # ── 3) 일반: 학명 → 주성분 → 영문명 순서 ────
+            sci_clean  = clean_scientific(sci_raw)
+            first_comp = first_component(comp_raw)
+            candidates = [sci_clean, first_comp, name]
+            cid, used  = search_cid_multi(candidates)
+            note       = f"검색어: '{used}'" if used else "CID 없음"
+
+        if not cid:
+            base["pubchem_note"] = f"CID not found (시도: 학명/성분/원료명)"
+            results.append(base)
+            print("→ CID 없음")
+            skip_count += 1
+            continue
+
+        # ── 4) 속성 수집 ──────────────────────────────────
+        base["pubchem_cid"] = cid
+        props = get_properties(cid)
+        base.update(props)
+        time.sleep(0.3)
+
+        cas = get_cas(cid)
+        base["cas_number"] = cas
+        base["pubchem_note"] = note
+        time.sleep(0.3)
+
+        results.append(base)
+        print(f"→ CID: {cid}  CAS: {cas}  ({note})")
+        success_count += 1
+
+    # ── 저장 ──────────────────────────────────────────────
+    out = pd.DataFrame(results)
+    os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
+    out.to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
+
+    print(f"""
+{'='*55}
+[DONE] 저장 완료: {OUTPUT_CSV}
+       총 {total}개  |  성공 {success_count}개  |  N/A {skip_count}개
+{'='*55}
+""")
+
 
 if __name__ == "__main__":
     main()

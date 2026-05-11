@@ -1,67 +1,67 @@
-﻿name,pubchem_cid,cas_number,molecular_formula,molecular_weight
-Alpine Lavender,N/A,N/A,N/A,N/A
-Apple,N/A,N/A,N/A,N/A
-Bamboo,N/A,N/A,N/A,N/A
-Basil,N/A,N/A,N/A,N/A
-Bay leaf,446220,50-36-2,C17H21NO4,303.35
-Bergamot,N/A,N/A,N/A,N/A
-Bitter Lemon,N/A,N/A,N/A,N/A
-Cassis Fruits,N/A,N/A,N/A,N/A
-Clove,N/A,N/A,N/A,N/A
-Fig,N/A,N/A,N/A,N/A
-Galbanum Plant,N/A,N/A,N/A,N/A
-Grapefruit,N/A,N/A,N/A,N/A
-Green Note,204,97-59-6,C4H6N4O3,158.12
-Green Tea,204,97-59-6,C4H6N4O3,158.12
-Lime,14778,1305-78-8,CaO,56.08
-May Rose,3011155,121032-29-9,C11H15N5O5,297.27
-Orange,N/A,N/A,N/A,N/A
-Peach,N/A,N/A,N/A,N/A
-Rosewood,N/A,N/A,N/A,N/A
-Tangerine,N/A,N/A,N/A,N/A
-Aldehydal,N/A,N/A,N/A,N/A
-Bitter Orange Flower,N/A,N/A,N/A,N/A
-Blackberry,N/A,N/A,N/A,N/A
-Carnation,N/A,N/A,N/A,N/A
-Cinnamon,N/A,N/A,N/A,N/A
-Civet Cat Oil,N/A,N/A,N/A,N/A
-Geranium,81263,6812-78-8,C10H20O,156.26
-Ginger,N/A,N/A,N/A,N/A
-Honeysuckle,N/A,N/A,N/A,N/A
-Hyacinth,61775,1344-21-4,O4SiZr,183.30
-Ivy,46219816,N/A,C20H12F4N4O,400.3
-Jasmin,N/A,N/A,N/A,N/A
-Lilac Flowers,N/A,N/A,N/A,N/A
-Lily of the Valley,N/A,N/A,N/A,N/A
-Pinewood,N/A,N/A,N/A,N/A
-Rose Petals,N/A,N/A,N/A,N/A
-Rosemarin,N/A,N/A,N/A,N/A
-Sea Scent,27902,111-57-9,C20H41NO2,327.5
-Violet Leaves,N/A,N/A,N/A,N/A
-Ylang Ylang,N/A,N/A,N/A,N/A
-Amber,N/A,N/A,N/A,N/A
-Beaver Oil,N/A,N/A,N/A,N/A
-Benzoin,8400,119-53-9,C14H12O2,212.24
-Cedarwood,N/A,N/A,N/A,N/A
-Iris,3776,67-63-0,C3H8O,60.10
-Moss,N/A,N/A,N/A,N/A
-Musk,5365703,123-69-3,C16H28O2,252.39
-Patchouli,N/A,N/A,N/A,N/A
-Sandalwood,N/A,N/A,N/A,N/A
-Tonka Nut,71304809,N/A,C30H32Cl2N4O4,583.5
-Tuberosa,N/A,N/A,N/A,N/A
-Vanilla,1183,121-33-5,C8H8O3,152.15
-Vetiver,N/A,N/A,N/A,N/A
-White Musk,5365703,123-69-3,C16H28O2,252.39
-Black tea,N/A,N/A,N/A,N/A
-Cherry blossom,N/A,N/A,N/A,N/A
-Gardenia,N/A,N/A,N/A,N/A
-Jasmin sambae,N/A,N/A,N/A,N/A
-Juniper berry,N/A,N/A,N/A,N/A
-Leather,N/A,N/A,N/A,N/A
-Mimosa,N/A,N/A,N/A,N/A
-Peony,135465069,1658-56-6,C20H13N2NaO4S,400.4
-Plumeria,N/A,N/A,N/A,N/A
-Tea Rose,N/A,N/A,N/A,N/A
-Tulip,60822,134523-03-8,C66H68CaF2N4O10,1155.3
-Verbena,N/A,N/A,N/A,N/A
+﻿name,pubchem_cid,cas_number,molecular_formula,molecular_weight,iupac_name,smiles,pubchem_note
+Alpine Lavender,8294,115-95-7,C12H20O2,196.29,"3,7-dimethylocta-1,6-dien-3-yl acetate",N/A,검색어: 'Linalyl acetate'
+Apple,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Bamboo,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Basil,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Bay leaf,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Bergamot,8294,115-95-7,C12H20O2,196.29,"3,7-dimethylocta-1,6-dien-3-yl acetate",N/A,검색어: 'Linalyl acetate'
+Bitter Lemon,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
+Cassis Fruits,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Clove,3314,97-53-0,C10H12O2,164.20,2-methoxy-4-prop-2-enylphenol,N/A,검색어: 'Eugenol'
+Fig,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Galbanum Plant,15837102,N/A,C10H16,136.23,"2,6,6-trimethylbicyclo[3.1.1]hept-1-ene",N/A,검색어: 'Pinene'
+Grapefruit,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
+Green Note,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Green Tea,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Lime,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
+May Rose,6054,60-12-8,C8H10O,122.16,2-phenylethanol,N/A,검색어: 'Phenyl ethyl alcohol'
+Orange,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
+Peach,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Rosewood,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Tangerine,440917,5989-27-5,C10H16,136.23,(4R)-1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'd-Limonene'
+Aldehydal,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Bitter Orange Flower,6549,78-70-6,C10H18O,154.25,"3,7-dimethylocta-1,6-dien-3-ol",N/A,검색어: 'Linalool'
+Blackberry,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Carnation,3314,97-53-0,C10H12O2,164.20,2-methoxy-4-prop-2-enylphenol,N/A,검색어: 'Eugenol'
+Cinnamon,637511,104-55-2,C9H8O,132.16,(E)-3-phenylprop-2-enal,N/A,검색어: 'Cinnamic aldehyde'
+Civet Cat Oil,5315941,542-46-1,C17H30O,250.4,(9Z)-cycloheptadec-9-en-1-one,N/A,동물성 — 주성분(Civetone) 기준
+Geranium,637566,106-24-1,C10H18O,154.25,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",N/A,검색어: 'Geraniol'
+Ginger,6434062,29714-87-2,C10H16,136.23,"(3E,5E)-3,7-dimethylocta-1,3,5-triene",N/A,검색어: 'Ocimene'
+Honeysuckle,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Hyacinth,244,100-51-6,C7H8O,108.14,phenylmethanol,N/A,검색어: 'Benzyl alcohol'
+Ivy,46219816,N/A,C20H12F4N4O,400.3,3-[2-(2-fluorophenyl)pyrazol-3-yl]-1-[3-(trifluoromethyl)phenyl]pyridazin-4-one,N/A,검색어: 'Ivy'
+Jasmin,8785,140-11-4,C9H10O2,150.17,benzyl acetate,N/A,검색어: 'Benzyl acetate'
+Lilac Flowers,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Lily of the Valley,6549,78-70-6,C10H18O,154.25,"3,7-dimethylocta-1,6-dien-3-ol",N/A,검색어: 'Linalool'
+Pinewood,17100,98-55-5,C10H18O,154.25,2-(4-methylcyclohex-3-en-1-yl)propan-2-ol,N/A,검색어: 'Terpineol'
+Rose Petals,637566,106-24-1,C10H18O,154.25,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",N/A,검색어: 'Geraniol'
+Rosemarin,64685,507-70-0,C10H18O,154.25,"1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol",N/A,검색어: 'Borneol'
+Sea Scent,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Violet Leaves,24680,232-396-8,C13H20O,192.30,"4-(2,6,6-trimethylcyclohex-2-en-1-yl)but-3-en-2-one",N/A,검색어: 'Ionone'
+Ylang Ylang,853433,97-54-1,C10H12O2,164.20,2-methoxy-4-[(E)-prop-1-enyl]phenol,N/A,검색어: 'Isoeugenol'
+Amber,10857465,6790-58-5,C16H28O,236.39,"(3aR,5aS,9aS,9bR)-3a,6,6,9a-tetramethyl-2,4,5,5a,7,8,9,9b-octahydro-1H-benzo[e][1]benzofuran",N/A,동물성 — 주성분(Ambroxan) 기준
+Beaver Oil,11368680,N/A,C15H23NO2,249.35,"[(3S,6S,9R,9aS)-6-(furan-3-yl)-9-methyl-2,3,4,6,7,8,9,9a-octahydro-1H-quinolizin-3-yl]methanol",N/A,동물성 — 주성분(Castoramine) 기준
+Benzoin,8400,119-53-9,C14H12O2,212.24,"2-hydroxy-1,2-diphenylethanone",N/A,검색어: 'Benzoin'
+Cedarwood,521207,234-257-7,C15H24,204.35,"2,6,6,8-tetramethyltricyclo[5.3.1.01,5]undec-8-ene",N/A,검색어: 'Cedrene'
+Iris,11005,544-63-8,C14H28O2,228.37,tetradecanoic acid,N/A,검색어: 'Myristic acid'
+Moss,24680,232-396-8,C13H20O,192.30,"4-(2,6,6-trimethylcyclohex-2-en-1-yl)but-3-en-2-one",N/A,검색어: 'Ionone'
+Musk,7160826,10403-00-6,C16H30O,238.41,(3R)-3-methylcyclopentadecan-1-one,N/A,동물성 — 주성분(Muscone) 기준
+Patchouli,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Sandalwood,12315259,73890-74-1,C15H24O,220.35,"(E)-2-methyl-5-[(1S,2S,4R)-2-methyl-3-methylidene-2-bicyclo[2.2.1]heptanyl]pent-2-en-1-ol",N/A,검색어: 'Santalol'
+Tonka Nut,323,91-64-5,C9H6O2,146.14,chromen-2-one,N/A,검색어: 'Coumarin'
+Tuberosa,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Vanilla,8467,121-32-4,C9H10O3,166.17,3-ethoxy-4-hydroxybenzaldehyde,N/A,검색어: 'Ethyl vanillin'
+Vetiver,101549,201-949-5,C15H24O,220.35,"4,8-dimethyl-2-propan-2-ylidene-3,3a,4,5,6,8a-hexahydro-1H-azulen-6-ol",N/A,검색어: 'Vetiverol'
+White Musk,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Black tea,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Cherry blossom,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Gardenia,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Jasmin sambae,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Juniper berry,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Leather,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Mimosa,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Peony,135465069,1658-56-6,C20H13N2NaO4S,400.4,sodium 4-[(2-hydroxynaphthalen-1-yl)diazenyl]naphthalene-1-sulfonate,N/A,검색어: 'Peony'
+Plumeria,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Tea Rose,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+Tulip,60822,134523-03-8,C66H68CaF2N4O10,1155.3,"calcium bis((3R,5R)-7-[2-(4-fluorophenyl)-3-phenyl-4-(phenylcarbamoyl)-5-propan-2-ylpyrrol-1-yl]-3,5-dihydroxyheptanoate)",N/A,검색어: 'Tulip'
+Verbena,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)

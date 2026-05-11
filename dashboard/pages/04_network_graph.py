@@ -7,7 +7,58 @@ import streamlit.components.v1 as components
 import os
 
 # 페이지 설정
-st.set_page_config(page_title="Industrial Connection Map", page_icon="🕸️", layout="wide")
+st.set_page_config(page_title="Note Network", page_icon="🕸️", layout="wide")
+
+# --- 공통 디자인 시스템 적용 ---
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    
+    html, body, [data-testid="stAppViewContainer"] {
+        font-family: 'Inter', sans-serif;
+        background-color: #fdfcfb;
+    }
+
+    /* 사이드바 통일 */
+    [data-testid="stSidebar"] {
+        background-color: #1e2022 !important;
+    }
+    [data-testid="stSidebarNav"] span { color: #f0ece6 !important; }
+
+    /* 타이틀 및 설명 */
+    .pg-title { font-size: 42px; font-weight: 800; color: #1e2022; margin-bottom: 0.5rem; }
+    .pg-desc { color: #6b7280; margin-bottom: 2.5rem; font-size: 16px; }
+
+    /* 상단 필터 바 */
+    .top-bar {
+        background: #f7f6f3;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #e2ddd6;
+        margin-bottom: 30px;
+    }
+
+    /* 인사이트 섹션 (빈 박스 제거 및 스타일 조정) */
+    .insight-container {
+        margin-top: 40px;
+    }
+    .insight-ttl {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e2022;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .insight-item {
+        font-size: 14px;
+        color: #4a4e54;
+        margin-bottom: 8px;
+        padding-left: 5px;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 def load_data():
     db_path = "data/fragrance_db.sqlite"
@@ -19,117 +70,77 @@ def load_data():
     return df
 
 def main():
-    st.title("🕸️ Industrial Connection Map (산업 연결 맵)")
-    st.markdown("---")
+    st.markdown('<div class="pg-title">🕸️ Note Network</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pg-desc">원료와 산업군 간의 관계를 시각화하여 범용성과 새로운 향기 조합의 가능성을 분석합니다.</div>', unsafe_allow_html=True)
 
     df = load_data()
     if df.empty:
         st.warning("데이터가 없습니다.")
         return
 
-    st.markdown("""
-    이 맵은 향료 원료(노드)와 해당 원료가 사용되는 산업 분야(노드) 간의 연결성을 보여줍니다.
-    중심에 위치한 노드일수록 여러 산업에서 범용적으로 사용되는 원료입니다.
-    """)
+    # 산업 분야 컬러 매핑
+    industry_colors = {
+        "perfume": "#1e2022", "cosmetic": "#9ca3af", "food": "#e2ddd6",
+        "tea_coffee": "#fcd9a0", "home_scent": "#bfdbfe", "fabric": "#a7f3d0",
+        "pharmaceutical": "#fef3e2"
+    }
+
+    # 상단 필터 바
+    st.markdown('<div class="top-bar">', unsafe_allow_html=True)
+    selected_industries = st.multiselect(
+        "Select Industries to Analyze Connectivity", 
+        list(industry_colors.keys()), 
+        default=list(industry_colors.keys())[:4]
+    )
+    st.markdown('</div>', unsafe_allow_html=True)
 
     # 네트워크 생성
     G = nx.Graph()
-
-    # 산업 분야 색상 매핑
-    industry_colors = {
-        "perfume": "#FF9E9E",
-        "cosmetic": "#9E9EFF",
-        "food": "#9EFF9E",
-        "tea_coffee": "#FFFF9E",
-        "home_scent": "#FF9EFF",
-        "fabric": "#9EFFFF",
-        "pharmaceutical": "#FFD29E"
-    }
-
-    # 노드 및 엣지 추가
-    selected_industries = st.multiselect(
-        "필터링할 산업 분야를 선택하세요", 
-        list(industry_colors.keys()), 
-        default=list(industry_colors.keys())
-    )
-
     for _, row in df.iterrows():
         ingredient = row['name']
-        usages = [u.strip() for u in row['industry_usage'].split(',') if u.strip()]
-        
-        # 필터링된 산업만 포함
+        usages = [u.strip() for u in str(row['industry_usage']).split(',') if u.strip()]
         valid_usages = [u for u in usages if u in selected_industries]
         
         if valid_usages:
-            G.add_node(ingredient, color="#CCCCCC", size=15, title=f"Family: {row['odor_family']}")
+            G.add_node(ingredient, color="#CCCCCC", size=12, title=f"Family: {row['odor_family']}")
             for usage in valid_usages:
                 G.add_node(usage, color=industry_colors.get(usage, "#000000"), size=25, shape="diamond")
                 G.add_edge(ingredient, usage)
 
-    # PyVis 시각화
-    nt = Network(height="600px", width="100%", bgcolor="#ffffff", font_color="black")
+    # 그래프 렌더링
+    st.markdown('<div style="font-size: 18px; font-weight: 700; color: #4a4e54; margin-bottom: 15px;">Industrial Connectivity Map</div>', unsafe_allow_html=True)
+    nt = Network(height="600px", width="100%", bgcolor="#ffffff", font_color="#1e2022")
     nt.from_nx(G)
+    nt.set_options('{"physics": {"forceAtlas2Based": {"gravitationalConstant": -100, "springLength": 100}, "solver": "forceAtlas2Based"}}')
     
-    # 레이아웃 옵션 설정
-    nt.set_options("""
-    var options = {
-      "nodes": {
-        "font": { "size": 12 }
-      },
-      "edges": {
-        "color": { "inherit": true },
-        "smooth": false
-      },
-      "physics": {
-        "forceAtlas2Based": {
-          "gravitationalConstant": -50,
-          "centralGravity": 0.01,
-          "springLength": 100,
-          "springConstant": 0.08
-        },
-        "maxVelocity": 50,
-        "solver": "forceAtlas2Based",
-        "timestep": 0.35,
-        "stabilization": { "iterations": 150 }
-      }
-    }
-    """)
-
-    # 파일 저장 및 출력
     try:
-        # 임시 디렉토리 생성 (워크스페이스 내부)
         temp_dir = "dashboard/temp"
         os.makedirs(temp_dir, exist_ok=True)
         path = os.path.join(temp_dir, "network.html")
         nt.save_graph(path)
-        
         with open(path, 'r', encoding='utf-8') as f:
-            html_data = f.read()
-            components.html(html_data, height=650)
+            components.html(f.read(), height=620)
     except Exception as e:
-        st.error(f"시각화 로딩 중 오류가 발생했습니다: {e}")
+        st.error(f"Error: {e}")
 
-    # 인사이트
-    st.markdown("---")
-    st.subheader("Key Insights")
-    col1, col2 = st.columns(2)
-    
-    # 연결성 분석
+    # 인사이트 섹션 (빈 박스 레이아웃 제거)
+    st.markdown('<div class="insight-container"></div>', unsafe_allow_html=True)
+    c1, c2 = st.columns(2)
     degrees = dict(G.degree())
     most_versatile = sorted([n for n in degrees if n not in industry_colors], 
                            key=lambda x: degrees[x], reverse=True)[:5]
-    
-    with col1:
-        st.write("**Top 5 Versatile Ingredients (가장 범용적인 원료):**")
-        for i, name in enumerate(most_versatile, 1):
-            st.write(f"{i}. {name} (Used in {degrees[name]} industries)")
 
-    with col2:
-        st.write("**Industry Connectivity (산업별 원료 연결 수):**")
+    with c1:
+        st.markdown('<div class="insight-ttl">🏆 Top Versatile Ingredients</div>', unsafe_allow_html=True)
+        for i, name in enumerate(most_versatile, 1):
+            st.markdown(f'<div class="insight-item"><b>{i}. {name}</b> ({degrees[name]} industries)</div>', unsafe_allow_html=True)
+
+    with c2:
+        st.markdown('<div class="insight-ttl">📊 Connectivity by Industry</div>', unsafe_allow_html=True)
         for industry in selected_industries:
             if industry in G:
                 count = len(list(G.neighbors(industry)))
-                st.write(f"- {industry.capitalize()}: {count} ingredients")
+                st.markdown(f'<div class="insight-item"><b>{industry.capitalize()}</b>: {count} ingredients</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()

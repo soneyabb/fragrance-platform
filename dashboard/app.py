@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # 페이지 설정
 st.set_page_config(
@@ -8,28 +9,141 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 사이드바 설정
-st.sidebar.title("Navigation")
-st.sidebar.markdown("---")
+# --- 공통 디자인 시스템 CSS ---
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
-# 메인 홈 화면
+    /* 전체 배경 및 폰트 */
+    html, body, [data-testid="stAppViewContainer"] {
+        font-family: 'Inter', sans-serif;
+        background-color: #fdfcfb;
+    }
+
+    /* 사이드바 통일 (타이틀/푸터 제거용) */
+    [data-testid="stSidebar"] {
+        background-color: #1e2022 !important;
+    }
+    [data-testid="stSidebarNav"] span {
+        color: #f0ece6 !important;
+        font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero-container {
+        background: #1e2022;
+        padding: 2.5rem 3rem;
+        border-radius: 20px;
+        color: #f0ece6;
+        margin-bottom: 2rem;
+    }
+    .hero-title {
+        font-size: 38px;
+        font-weight: 800;
+        margin-bottom: 12px;
+        letter-spacing: -0.03em;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+        font-weight: 300;
+        opacity: 0.85;
+        line-height: 1.6;
+    }
+
+    /* 2x2 카드 그리드 시스템 */
+    .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 1000px; /* 너무 퍼지지 않게 제한 */
+    }
+    .f-card {
+        background: white;
+        padding: 1.8rem;
+        border-radius: 16px;
+        border: 1px solid #e2ddd6;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+        color: #1e2022 !important;
+        display: flex;
+        flex-direction: column;
+    }
+    .f-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(30, 32, 34, 0.05);
+        border-color: #1e2022;
+    }
+    .f-icon { font-size: 32px; margin-bottom: 15px; }
+    .f-title { font-size: 19px; font-weight: 700; margin-bottom: 8px; white-space: nowrap; }
+    .f-desc { font-size: 14px; color: #6b7280; line-height: 1.5; }
+
+    /* 스테이터스 바 */
+    .status-bar {
+        background: #f7f6f3;
+        padding: 8px 20px;
+        border-radius: 100px;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #4a4e54;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e2ddd6;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 def main():
-    st.title("⚗️ Fragrance Intelligence Platform")
-    
+    # 상단 스테이터스
     st.markdown("""
-    ### 프로젝트 소개
-    이 플랫폼은 향수 원료 데이터 수집, 분석 및 트렌드 시각화를 위한 통합 인텔리전스 도구입니다.
-    
-    #### 주요 기능:
-    * **원료 탐색기**: PubChem 등 다양한 소스로부터 수집된 성분 정보 확인
-    * **향 분석**: 원료별 향기 특성 및 네트워크 시각화
-    * **트렌드 분석**: Google Trends 및 Reddit 데이터를 통한 실시간 선호도 파악
-    * **데이터 파이프라인**: 자동화된 수집 및 정제 시스템
-    
-    왼쪽 사이드바의 메뉴를 통해 각 분석 페이지로 이동할 수 있습니다.
-    """)
-    
-    st.info("현재 시스템은 초기 구축 단계에 있습니다. 각 폴더에 스크립트를 추가하여 기능을 확장할 수 있습니다.")
+        <div class="status-bar">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="width:6px; height:6px; background:#10b981; border-radius:50%;"></div> Platform Active
+            </div>
+            <div style="color: #e2ddd6;">|</div>
+            <div>Latest Data: May 2026</div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Hero Section
+    st.markdown("""
+        <div class="hero-container">
+            <div class="hero-title">Fragrance Intelligence</div>
+            <div class="hero-subtitle">
+                데이터 기반의 감각 분석과 실시간 트렌드를 통해 
+                미래의 향을 설계하는 통합 인텔리전스 시스템입니다.
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Feature Cards (2x2 배정)
+    st.markdown("""
+        <div class="feature-grid">
+            <a href="/ingredient_explorer" class="f-card" target="_self">
+                <div class="f-icon">🧪</div>
+                <div class="f-title">🔍 Ingredient Explorer</div>
+                <div class="f-desc">화학적 데이터와 조향 노트를 결합한 원료 라이브러리입니다.</div>
+            </a>
+            <a href="/note_analysis" class="f-card" target="_self">
+                <div class="f-icon">📊</div>
+                <div class="f-title">📊 Note Analysis</div>
+                <div class="f-desc">원료별 휘발도와 향기 분포를 시각적으로 분석합니다.</div>
+            </a>
+            <a href="/trend_chart" class="f-card" target="_self">
+                <div class="f-icon">📈</div>
+                <div class="f-title">📈 Trend Insights</div>
+                <div class="f-desc">소셜 데이터 기반의 실시간 향료 트렌드를 파악합니다.</div>
+            </a>
+            <a href="/network_graph" class="f-card" target="_self">
+                <div class="f-icon">🕸️</div>
+                <div class="f-title">🕸️ Note Network</div>
+                <div class="f-desc">원료 간의 상보성 및 연결 관계를 시각화합니다.</div>
+            </a>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # 사이드바 타이틀/푸터 제거됨 (내비게이션만 유지)
 
 if __name__ == "__main__":
     main()
