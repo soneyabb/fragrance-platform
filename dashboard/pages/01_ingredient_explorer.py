@@ -19,7 +19,7 @@ st.set_page_config(
 # ── 전역 CSS ─────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
@@ -29,54 +29,55 @@ html, body, [class*="css"] {
 .ing-card {
     background: #ffffff;
     border: 1px solid #e2ddd6;
-    border-radius: 16px;
-    padding: 1.4rem;
-    margin-bottom: 1rem;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
 /* 원료명 */
 .ing-name {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 36px;
+    font-weight: 800;
     color: #1e2022;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin-bottom: 4px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 8px;
 }
 
 /* 학명 */
 .ing-sci {
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 400;
     color: #6b7280;
     font-style: italic;
-    margin-bottom: 0.9rem;
+    margin-bottom: 1.5rem;
 }
 
 /* 별점 */
 .star-row {
     display: flex;
-    gap: 2px;
-    margin-bottom: 2px;
+    gap: 4px;
+    margin-bottom: 4px;
     justify-content: flex-end;
 }
-.star-filled { color: #6b7280; font-size: 13px; }
-.star-empty  { color: #e2ddd6; font-size: 13px; }
+.star-filled { color: #1e2022; font-size: 20px; }
+.star-empty  { color: #e2ddd6; font-size: 20px; }
 .pref-label  {
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #6b7280;
+    color: #9ca3af;
     text-align: right;
 }
 
 /* 칩 */
-.chip-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 0.9rem; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.5rem; }
 .chip {
-    font-size: 11px;
-    font-weight: 500;
-    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 18px;
     border-radius: 100px;
     border: 1px solid;
     display: inline-block;
@@ -85,131 +86,182 @@ html, body, [class*="css"] {
 .chip-note   { background:#ecfdf5; color:#065f46; border-color:#a7f3d0; }
 .chip-role   { background:#eff6ff; color:#1e40af; border-color:#bfdbfe; }
 
-/* 소제목 */
+/* 소제목 (강화) */
 .slbl {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
-    color: #4a5260;
-    margin-bottom: 7px;
-    margin-top: 1rem;
+    color: #1e2022;
+    margin-bottom: 15px;
+    margin-top: 3rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1e2022;
 }
 
 /* 태그 */
 .otag {
     display: inline-block;
-    background: #f7f6f3;
-    border: 1px solid #e2ddd6;
-    color: #4a4e54;
-    font-size: 11px;
-    padding: 3px 9px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #495057;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 16px;
     border-radius: 100px;
-    margin: 2px 2px;
+    margin: 4px 4px;
 }
 
-/* 박스 */
+/* 박스 (줄간격 및 패딩 강화) */
 .sbox {
-    background: #f7f6f3;
-    border-radius: 9px;
-    padding: 0.75rem 0.9rem;
-    margin-bottom: 0.5rem;
-    font-size: 12px;
-    color: #4a4e54;
-    line-height: 1.65;
+    background: #fafafa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.85;
 }
 
 /* 2컬럼 박스 */
 .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 0.7rem;
+    gap: 20px;
+    margin-bottom: 1.5rem;
 }
 .col-box {
-    background: #f7f6f3;
-    border-radius: 9px;
-    padding: 0.8rem 0.9rem;
+    background: #fafafa;
+    border-radius: 15px;
+    padding: 2rem;
 }
 .col-ttl {
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #4a5260;
-    margin-bottom: 6px;
+    color: #9ca3af;
+    margin-bottom: 12px;
 }
-.col-tx { font-size: 12px; color: #4a4e54; line-height: 1.65; }
+.col-tx { font-size: 16px; color: #374151; line-height: 1.85; }
 
 /* 인용 박스 */
 .qt-box {
     background: #1e2022;
-    border-radius: 11px;
-    padding: 0.9rem 1rem;
-    margin-top: 0.5rem;
+    border-radius: 18px;
+    padding: 2rem 2.5rem;
+    margin-top: 1.5rem;
 }
 .qt-text {
-    font-size: 12px;
+    font-size: 18px;
     color: #f0ece6;
-    line-height: 1.75;
+    line-height: 1.9;
     font-weight: 300;
+    font-style: italic;
 }
 .qt-attr {
-    font-size: 9px;
+    font-size: 12px;
     color: #6b7280;
-    margin-top: 5px;
-    letter-spacing: 0.12em;
+    margin-top: 12px;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-/* 화학식 4칸 */
-.chem4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 5px; margin-bottom: 0.7rem; }
-.ccard { background: #f7f6f3; border-radius: 9px; padding: 8px 6px; text-align: center; }
-.cval  { font-size: 12px; font-weight: 600; color: #1e2022; }
-.ckey  { font-size: 8px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #4a5260; margin-top: 3px; }
+/* 핵심 데이터 카드 (값 중앙, 라벨 하단 고정) */
+.chem4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 15px; margin-bottom: 1.5rem; }
+.ccard { 
+    background: #f8f9fa; 
+    border-radius: 12px; 
+    padding: 15px 12px; 
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    border: 1px solid #f1f3f5;
+    min-height: 110px !important; 
+}
+.cval-container {
+    flex: 1;             /* 남은 공간 모두 차지 */
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center;
+    width: 100%;
+}
+.cval  { 
+    font-size: 14px; 
+    font-weight: 800; 
+    color: #1e2022; 
+    word-break: keep-all;
+    line-height: 1.4;
+}
+.ckey  { 
+    font-size: 9px; 
+    font-weight: 800; 
+    letter-spacing: 0.12em; 
+    text-transform: uppercase; 
+    color: #9ca3af; 
+    padding-top: 10px;
+}
 
-/* 컴포넌트 박스 */
-.comp-box { background: #f7f6f3; border-radius: 9px; padding: 0.75rem 0.9rem; margin-bottom: 0.5rem; }
-.comp-m   { font-size: 12px; font-weight: 600; color: #1e2022; margin-bottom: 3px; }
-.comp-s   { font-size: 11px; color: #4a4e54; line-height: 1.55; }
+/* 탭 카테고리 글자 크기 최적화 (18px) */
+.stTabs [data-baseweb="tab"] p {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    white-space: nowrap;
+}
+.stTabs [data-baseweb="tab"] {
+    margin-right: 15px !important;
+    padding-bottom: 2px !important;
+}
 
 /* 산업 바 */
-.bar-row  { margin-bottom: 7px; }
-.bar-top  { display: flex; justify-content: space-between; font-size: 11px; font-weight: 500; color: #4a4e54; margin-bottom: 3px; }
-.bar-desc { font-size: 10px; color: #6b7280; }
-.bar-bg   { background: #e2ddd6; border-radius: 100px; height: 4px; }
-.bar-fill { background: #1e2022; border-radius: 100px; height: 4px; }
+.bar-row  { margin-bottom: 15px; }
+.bar-top  { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: #1e2022; margin-bottom: 8px; }
+.bar-desc { font-size: 13px; color: #6b7280; }
+.bar-bg   { background: #e9ecef; border-radius: 100px; height: 8px; }
+.bar-fill { background: #1e2022; border-radius: 100px; height: 8px; }
 
 /* 링크 */
-.lnk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 0.9rem; }
+.lnk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1.2rem; }
 .lnk {
-    display: flex; align-items: center; gap: 7px;
+    display: flex; align-items: center; gap: 10px;
     background: #f7f6f3; border: 1px solid #e2ddd6;
-    border-radius: 8px; padding: 7px 10px;
+    border-radius: 11px; padding: 10px 14px;
     text-decoration: none;
 }
-.lnk-t { font-size: 11px; font-weight: 600; color: #1e2022; }
-.lnk-s { font-size: 10px; color: #6b7280; }
+.lnk-t { font-size: 13px; font-weight: 600; color: #1e2022; }
+.lnk-s { font-size: 12px; color: #6b7280; }
 
 /* 트렌드 카드 */
 .trend-card {
-    border-left: 2px solid #1e2022;
-    padding: 7px 11px;
-    margin-bottom: 5px;
+    border-left: 3px solid #1e2022;
+    padding: 10px 14px;
+    margin-bottom: 7px;
     background: #f7f6f3;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 11px 11px 0;
 }
-.trend-m  { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4a5260; margin-bottom: 3px; }
-.trend-tx { font-size: 11px; color: #4a4e54; line-height: 1.6; }
+.trend-m  { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4a5260; margin-bottom: 4px; }
+.trend-tx { font-size: 13px; color: #4a4e54; line-height: 1.7; }
 
 /* API 안내 박스 */
 .api-box {
-    background: #f7f6f3; border-radius: 9px;
-    padding: 0.75rem 0.9rem;
-    font-size: 11px; color: #4a4e54; line-height: 1.65;
-    margin-top: 0.6rem;
+    background: #f7f6f3; border-radius: 11px;
+    padding: 1rem 1.2rem;
+    font-size: 13px; color: #4a4e54; line-height: 1.75;
+    margin-top: 0.8rem;
 }
+
+/* Safety & Regulation 박스 */
+.safety-box {
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
+    border-left: 5px solid #f56565;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+}
+.safety-m { font-size: 18px; font-weight: 700; color: #c53030; margin-bottom: 8px; }
+.safety-s { font-size: 16px; color: #4a5568; line-height: 1.7; }
 
 /* 사이드바 */
 [data-testid="stSidebar"] { background: #faf9f6; }
@@ -296,27 +348,32 @@ def safe(val) -> str:
     return v if v not in ("N/A", "nan", ":", "") else "—"
 
 
-# ── 사이드바 필터 ─────────────────────────────────────────────────────────────
-def sidebar_filters(df):
-    st.sidebar.markdown("### 🔍 Filter")
-    query = st.sidebar.text_input("원료명 검색", "")
+# ── 상단 필터 바 ─────────────────────────────────────────────────────────────
+def render_top_filters(df):
+    c1, c2, c3, c4 = st.columns([2, 1, 1, 1])
+    
+    with c1:
+        query = st.text_input("원료명 검색", "", placeholder="Search ingredients...")
 
-    vol_opts = ["All"] + sorted([
-        v for v in df["volatility_class"].dropna().unique()
-        if v not in ("N/A", "nan")
-    ])
-    vol = st.sidebar.selectbox("Volatility Class", vol_opts)
+    with c2:
+        vol_opts = ["All"] + sorted([
+            v for v in df["volatility_class"].dropna().unique()
+            if v not in ("N/A", "nan")
+        ])
+        vol = st.selectbox("Volatility Class", vol_opts)
 
-    fam_raw = sorted([
-        f for f in df["odor_family"].dropna().unique()
-        if f not in ("N/A", "nan")
-    ])
-    fam_opts = ["All"] + [f"{FAMILY_EMOJI.get(f,'⚗️')} {f}" for f in fam_raw]
-    fam_sel  = st.sidebar.selectbox("Odor Family", fam_opts)
-    fam      = fam_sel.split(" ", 1)[1] if fam_sel != "All" else "All"
+    with c3:
+        fam_raw = sorted([
+            f for f in df["odor_family"].dropna().unique()
+            if f not in ("N/A", "nan")
+        ])
+        fam_opts = ["All"] + [f"{FAMILY_EMOJI.get(f,'⚗️')} {f}" for f in fam_raw]
+        fam_sel  = st.selectbox("Odor Family", fam_opts)
+        fam      = fam_sel.split(" ", 1)[1] if fam_sel != "All" else "All"
 
-    ind_opts = ["All"] + list(INDUSTRY_INFO.keys())
-    ind      = st.sidebar.selectbox("Industry", ind_opts)
+    with c4:
+        ind_opts = ["All"] + sorted(list(INDUSTRY_INFO.keys()))
+        ind      = st.selectbox("Industry", ind_opts)
 
     return query, vol, fam, ind
 
@@ -353,14 +410,14 @@ def tab_overview(ing):
     method  = safe(ing.get("extraction_method", ""))
     comp    = safe(ing.get("main_components", "")).split(",")[0].strip()
     usages  = [u.strip() for u in str(ing.get("industry_usage","")).split(",") if u.strip() not in ("N/A","perfume","")]
-    top_ind = " · ".join(usages[:2]) if usages else "—"
+    indust  = " · ".join(usages[:2]) if usages else "—"
 
     st.markdown(f"""
     <div class="chem4">
-      <div class="ccard"><div class="cval">{origin}</div><div class="ckey">Origin</div></div>
-      <div class="ccard"><div class="cval">{method}</div><div class="ckey">Extraction</div></div>
-      <div class="ccard"><div class="cval">{comp}</div><div class="ckey">Key Component</div></div>
-      <div class="ccard"><div class="cval">{top_ind}</div><div class="ckey">Top Industries</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{origin}</div></div><div class="ckey">Origin</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{method}</div></div><div class="ckey">Extraction</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{comp}</div></div><div class="ckey">Key Component</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{indust}</div></div><div class="ckey">Top Industries</div></div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -382,6 +439,12 @@ def tab_sensory(ing):
     </div>
     """, unsafe_allow_html=True)
 
+    # Odor Descriptors
+    descriptors = str(ing.get("odor_descriptors", "")).split(",")
+    st.markdown('<div class="slbl">Odor Descriptors</div>', unsafe_allow_html=True)
+    tags_html = "".join([f'<span class="otag">{d.strip()}</span>' for d in descriptors if d.strip() not in ("N/A", "nan", "")])
+    st.markdown(f"<div>{tags_html}</div>", unsafe_allow_html=True)
+
     # Detailed Notes
     notes_raw = str(ing.get("sensory_notes", ""))
     if notes_raw and notes_raw not in ("N/A", "nan"):
@@ -391,11 +454,34 @@ def tab_sensory(ing):
             if n:
                 st.markdown(f'<div class="sbox">{n}</div>', unsafe_allow_html=True)
 
-    # Comparison Notes (있을 때만)
+    # Comparison Notes (스마트 파싱 렌더링)
     comp_notes = str(ing.get("comparison_notes", "")).strip()
     if comp_notes and comp_notes not in ("N/A", "nan", ""):
         st.markdown('<div class="slbl">Comparison Notes</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="sbox">{comp_notes}</div>', unsafe_allow_html=True)
+        
+        # 파싱 로직
+        parts = [p.strip() for p in comp_notes.split("|") if p.strip()]
+        if parts:
+            title = parts[0]
+            desc_parts = parts[1:]
+            
+            # 메인 비교 타이틀 (vs 강조)
+            st.markdown(f'<div style="font-size: 18px; font-weight: 700; color: #1e2022; margin-bottom: 10px;">{title}</div>', unsafe_allow_html=True)
+            
+            # 트리형 리스트 생성
+            tree_html = '<div style="font-family: monospace; font-size: 15px; line-height: 1.8; color: #4a5568; margin-left: 5px;">'
+            for i, desc in enumerate(desc_parts):
+                symbol = "└── " if i == len(desc_parts) - 1 else "├── "
+                # 원료명 강조 (콜론 앞부분)
+                if ":" in desc:
+                    name_part, text_part = desc.split(":", 1)
+                    tree_html += f'<div>{symbol}<b style="color: #1e2022;">{name_part.strip()}</b>: {text_part.strip()}</div>'
+                else:
+                    tree_html += f'<div>{symbol}{desc}</div>'
+            tree_html += '</div>'
+            st.markdown(tree_html, unsafe_allow_html=True)
+        else:
+            st.markdown(f'<div class="sbox">{comp_notes}</div>', unsafe_allow_html=True)
 
     # Personal Quote
     raw_notes = str(ing.get("sensory_notes", "")).split("|")
@@ -410,7 +496,13 @@ def tab_sensory(ing):
 
 
 def tab_chemistry(ing):
-    cid     = safe(ing.get("pubchem_cid", ""))
+    raw_cid = safe(ing.get("pubchem_cid", ""))
+    # CID 정수 변환 (8294.0 같은 실수형 방지)
+    try:
+        cid = str(int(float(raw_cid))) if raw_cid and raw_cid != "—" else "—"
+    except:
+        cid = raw_cid
+
     cas     = safe(ing.get("cas_number", ""))
     formula = safe(ing.get("molecular_formula", ""))
     weight  = safe(ing.get("molecular_weight", ""))
@@ -418,10 +510,10 @@ def tab_chemistry(ing):
     st.markdown('<div class="slbl">Chemical Identity</div>', unsafe_allow_html=True)
     st.markdown(f"""
     <div class="chem4">
-      <div class="ccard"><div class="cval">{formula}</div><div class="ckey">Formula</div></div>
-      <div class="ccard"><div class="cval">{weight}</div><div class="ckey">MW g/mol</div></div>
-      <div class="ccard"><div class="cval">{cid}</div><div class="ckey">PubChem CID</div></div>
-      <div class="ccard"><div class="cval">{cas}</div><div class="ckey">CAS No.</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{formula}</div></div><div class="ckey">Formula</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{weight}</div></div><div class="ckey">MW g/mol</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{cid}</div></div><div class="ckey">PubChem CID</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{cas}</div></div><div class="ckey">CAS No.</div></div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -429,33 +521,20 @@ def tab_chemistry(ing):
     if cid and cid != "—":
         st.markdown('<div class="slbl">Chemical Structure</div>', unsafe_allow_html=True)
         img_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/PNG"
-        st.image(img_url, width=250, caption=f"PubChem CID {cid}")
+        # 이미지 로딩 실패 대비 alt 텍스트 및 에러 처리
+        st.image(img_url, width=300, caption=f"PubChem CID {cid}")
 
-    # 주요 성분
+    # 주요 성분 (태그형으로 변경)
     components = safe(ing.get("main_components", ""))
     if components != "—":
         st.markdown('<div class="slbl">Key Components</div>', unsafe_allow_html=True)
+        comps_html = '<div style="margin-bottom: 1.5rem;">'
         for comp in components.split(","):
             c = comp.strip()
             if c:
-                st.markdown(f'<div class="comp-box"><div class="comp-m">{c}</div></div>', unsafe_allow_html=True)
-
-    # IFRA / 안전 정보 (pharmaceutical 포함 원료에만)
-    industry = str(ing.get("industry_usage", ""))
-    if "pharmaceutical" in industry or "cosmetic" in industry:
-        st.markdown('<div class="slbl">Safety & Regulation</div>', unsafe_allow_html=True)
-        st.markdown("""
-        <div class="comp-box">
-          <div class="comp-m">IFRA 규정 준수 필요</div>
-          <div class="comp-s">피부 도포용 제품 사용 시 IFRA 농도 기준 확인 필요.
-          <a href="https://www.ifrafragrance.org" target="_blank" style="color:#1e2022;">ifrafragrance.org →</a></div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # pubchem_note (수집 메모)
-    note = safe(ing.get("pubchem_note", ""))
-    if note != "—":
-        st.caption(f"📌 수집 메모: {note}")
+                comps_html += f'<span class="otag">{c}</span>'
+        comps_html += '</div>'
+        st.markdown(comps_html, unsafe_allow_html=True)
 
 
 def tab_industry(ing):
@@ -511,58 +590,62 @@ def main():
     if df.empty:
         return
 
-    query, vol, fam, ind = sidebar_filters(df)
+    # 1. 상단 필터 바
+    query, vol, fam, ind = render_top_filters(df)
     filtered = apply_filters(df, query, vol, fam, ind)
 
-    col_list, col_detail = st.columns([1, 2], gap="large")
+    # 2. 원료 선택 (전체 너비)
+    st.markdown(f"**{len(filtered)}개 원료가 검색되었습니다.**")
+    if filtered.empty:
+        st.info("검색 결과가 없습니다. 필터를 조정해 보세요.")
+        return
 
-    with col_list:
-        st.markdown(f"**{len(filtered)}개 원료**")
-        if filtered.empty:
-            st.info("검색 결과가 없습니다.")
-            return
-        selected_name = st.selectbox(
-            "원료 선택",
-            filtered["name"].tolist(),
-            label_visibility="collapsed"
-        )
+    selected_name = st.selectbox(
+        "원료를 선택하세요",
+        filtered["name"].tolist(),
+        label_visibility="visible"
+    )
 
     if not selected_name:
         return
 
     ing = df[df["name"] == selected_name].iloc[0].to_dict()
 
-    with col_detail:
-        # 헤더
-        family     = safe(ing.get("odor_family", ""))
-        volatility = safe(ing.get("volatility_class", ""))
-        role       = safe(ing.get("role", ""))
-        sci        = safe(ing.get("scientific_name", ""))
-        score      = ing.get("preference_score", 0)
+    # 3. 상세 정보 (전체 너비 카드 스타일)
+    st.markdown('<div class="ing-card">', unsafe_allow_html=True)
+    
+    # 헤더 섹션
+    family     = safe(ing.get("odor_family", ""))
+    volatility = safe(ing.get("volatility_class", ""))
+    role       = safe(ing.get("role", ""))
+    sci        = safe(ing.get("scientific_name", ""))
+    score      = ing.get("preference_score", 0)
 
-        header_html = f"""
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.3rem;">
-          <div>
-            <div class="ing-name">{selected_name}</div>
-            <div class="ing-sci">{sci}</div>
-          </div>
-          <div>{render_stars(score)}</div>
-        </div>
-        {render_chips(family, volatility, role)}
-        """
-        st.markdown(header_html, unsafe_allow_html=True)
+    header_html = f"""
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;">
+      <div>
+        <div class="ing-name">{selected_name}</div>
+        <div class="ing-sci">{sci}</div>
+      </div>
+      <div>{render_stars(score)}</div>
+    </div>
+    {render_chips(family, volatility, role)}
+    """
+    st.markdown(header_html, unsafe_allow_html=True)
 
-        # 탭
-        t_ov, t_se, t_ch, t_in = st.tabs(["Overview", "Sensory", "Chemistry", "Industry"])
+    # 탭 섹션 (전체 너비)
+    t_ov, t_se, t_ch, t_in = st.tabs(["Overview", "Sensory Analysis", "Chemical Identity", "Industry Data"])
 
-        with t_ov: tab_overview(ing)
-        with t_se: tab_sensory(ing)
-        with t_ch: tab_chemistry(ing)
-        with t_in: tab_industry(ing)
+    with t_ov: tab_overview(ing)
+    with t_se: tab_sensory(ing)
+    with t_ch: tab_chemistry(ing)
+    with t_in: tab_industry(ing)
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
-    # Raw Data
-    with st.expander("Raw Data", expanded=False):
-        st.dataframe(filtered, use_container_width=True)
+    # Raw Data (하단 접기)
+    with st.expander("🔍 Raw Database Record"):
+        st.write(ing)
 
 
 if __name__ == "__main__":
