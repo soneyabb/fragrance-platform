@@ -398,11 +398,15 @@ def tab_overview(ing):
     st.markdown(f'<div style="margin-bottom:8px;">{tags}</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="sbox">{obj}</div>', unsafe_allow_html=True)
 
-    # Sensory Summary (sensory_notes 첫 줄)
-    notes_raw = str(ing.get("sensory_notes", "")).split("|")
-    first_note = notes_raw[0].strip() if notes_raw else "—"
+    # Sensory Summary (Personal Memory (KR) 우선)
     st.markdown('<div class="slbl">Sensory Summary</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="sbox">{first_note}</div>', unsafe_allow_html=True)
+    summary = str(ing.get("Personal Memory (KR)", "")).strip()
+    if not summary or summary in ("N/A", "nan", "—", "None"):
+        # Fallback to sensory_notes first line
+        notes = str(ing.get("sensory_notes", "")).split("|")
+        summary = notes[0].strip() if notes else "No memory recorded."
+    
+    st.markdown(f'<div class="sbox">{summary}</div>', unsafe_allow_html=True)
 
     # At a Glance 4칸
     st.markdown('<div class="slbl">At a Glance</div>', unsafe_allow_html=True)
@@ -454,34 +458,65 @@ def tab_sensory(ing):
             if n:
                 st.markdown(f'<div class="sbox">{n}</div>', unsafe_allow_html=True)
 
-    # Comparison Notes (스마트 파싱 렌더링)
+    # Comparison Notes (디자인 개편)
     comp_notes = str(ing.get("comparison_notes", "")).strip()
     if comp_notes and comp_notes not in ("N/A", "nan", ""):
         st.markdown('<div class="slbl">Comparison Notes</div>', unsafe_allow_html=True)
         
-        # 파싱 로직
-        parts = [p.strip() for p in comp_notes.split("|") if p.strip()]
-        if parts:
-            title = parts[0]
-            desc_parts = parts[1:]
+        # 여러 쌍이 있을 경우 (|| 또는 패턴으로 분리 가능성 대비)
+        pairs = comp_notes.split("||") if "||" in comp_notes else [comp_notes]
+        
+        for idx, pair in enumerate(pairs):
+            if idx > 0: st.markdown("---")
             
-            # 메인 비교 타이틀 (vs 강조)
-            st.markdown(f'<div style="font-size: 18px; font-weight: 700; color: #1e2022; margin-bottom: 10px;">{title}</div>', unsafe_allow_html=True)
-            
-            # 트리형 리스트 생성
-            tree_html = '<div style="font-family: monospace; font-size: 15px; line-height: 1.8; color: #4a5568; margin-left: 5px;">'
-            for i, desc in enumerate(desc_parts):
-                symbol = "└── " if i == len(desc_parts) - 1 else "├── "
-                # 원료명 강조 (콜론 앞부분)
-                if ":" in desc:
-                    name_part, text_part = desc.split(":", 1)
-                    tree_html += f'<div>{symbol}<b style="color: #1e2022;">{name_part.strip()}</b>: {text_part.strip()}</div>'
+            parts = [p.strip() for p in pair.split("|") if p.strip()]
+            if parts:
+                # 설명이 포함된 항목들 추출
+                desc_items = [p for p in parts if ":" in p]
+                
+                # 지능형 제목 생성: 설명 항목에서 원료명 추출하여 A vs B 형태 완성
+                names_found = []
+                for item in desc_items:
+                    n = item.split(":", 1)[0].strip()
+                    if n not in names_found: names_found.append(n)
+                
+                if len(names_found) >= 2:
+                    title = f"{names_found[0]} vs {names_found[1]}"
                 else:
-                    tree_html += f'<div>{symbol}{desc}</div>'
-            tree_html += '</div>'
-            st.markdown(tree_html, unsafe_allow_html=True)
-        else:
-            st.markdown(f'<div class="sbox">{comp_notes}</div>', unsafe_allow_html=True)
+                    # 기존 제목 사용하되 image 등 불필요 단어 제거
+                    title = parts[0].replace("image", "").strip()
+                
+                # 제목 볼드 처리
+                st.markdown(f'<div style="font-size: 17px; font-weight: 800; color: #1e2022; margin-bottom: 12px;">{title}</div>', unsafe_allow_html=True)
+                
+                # 불렛 리스트 형태
+                list_html = '<div style="font-size: 15px; line-height: 1.8; color: #4a5568; margin-left: 5px;">'
+                for desc in desc_items:
+                    name_part, text_part = desc.split(":", 1)
+                    name_part = name_part.strip()
+                    text_part = text_part.strip()
+                    
+                    # 설명 끝에 원료명이 중복으로 붙어있는 경우 제거 (오타 대응 포함)
+                    # 현재 비교 중인 모든 원료명을 후보군으로 설정
+                    candidates = [n.lower() for n in names_found]
+                    # 흔한 오타 교차 체크 (Ceaderwood <-> Cedarwood 등)
+                    if "ceaderwood" in candidates and "cedarwood" not in candidates: candidates.append("cedarwood")
+                    if "cedarwood" in candidates and "ceaderwood" not in candidates: candidates.append("ceaderwood")
+                    
+                    words = text_part.split()
+                    if words:
+                        # 마지막 단어 추출 (문장부호 제외)
+                        last_word = words[-1].strip(".,!? ").lower()
+                        if last_word in candidates:
+                            text_part = " ".join(words[:-1]).strip()
+                            # 남은 문장 부호 정리
+                            text_part = text_part.rstrip(". ").strip()
+                    
+                    if not text_part.endswith("."): text_part += "." # 마침표 보정
+                    
+                    list_html += f'<div style="margin-bottom: 8px;"><b style="color: #1e2022;">• {name_part}</b>: {text_part}</div>'
+                list_html += '</div>'
+                st.markdown(list_html, unsafe_allow_html=True)
 
     # Personal Quote
     raw_notes = str(ing.get("sensory_notes", "")).split("|")
@@ -642,10 +677,6 @@ def main():
     with t_in: tab_industry(ing)
     
     st.markdown('</div>', unsafe_allow_html=True)
-
-    # Raw Data (하단 접기)
-    with st.expander("🔍 Raw Database Record"):
-        st.write(ing)
 
 
 if __name__ == "__main__":
