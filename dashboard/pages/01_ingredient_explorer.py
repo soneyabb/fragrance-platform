@@ -188,14 +188,14 @@ html, body, [class*="css"] {
     width: 100%;
 }
 .cval  { 
-    font-size: 14px; 
+    font-size: 16px; 
     font-weight: 800; 
     color: #1e2022; 
     word-break: keep-all;
     line-height: 1.4;
 }
 .ckey  { 
-    font-size: 9px; 
+    font-size: 11px; 
     font-weight: 800; 
     letter-spacing: 0.12em; 
     text-transform: uppercase; 
