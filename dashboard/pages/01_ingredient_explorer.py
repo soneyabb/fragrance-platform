@@ -336,11 +336,28 @@ def render_chips(family, volatility, role):
 
 
 def render_odor_tags(descriptors: str) -> str:
-    tags = [
-        d.strip() for d in str(descriptors).split(",")
-        if d.strip() and d.strip() not in ("N/A", "image", "nan", "vs", "")
-    ]
+    import re
+    tags = []
+    for d in str(descriptors).split(","):
+        t = d.strip()
+        # 기본 필터링: 빈 문자열, N/A, image, vs, nan 등 제외
+        if not t or t.lower() in ("n/a", "image", "nan", "vs", "none", ""):
+            continue
+        # 한글 포함 항목 제외
+        if re.search('[가-힣]', t):
+            continue
+        tags.append(t)
+    
     return "".join([f'<span class="otag">{t}</span>' for t in tags])
+
+
+def format_formula(formula: str) -> str:
+    """화학 분자식의 숫자를 HTML 아래첨자(sub)로 변환"""
+    if not formula or formula in ("N/A", "nan", "—", ""):
+        return "—"
+    import re
+    # 숫자 부분만 <sub>로 감쌈
+    return re.sub(r'(\d+)', r'<sub>\1</sub>', str(formula))
 
 
 def safe(val) -> str:
@@ -430,23 +447,42 @@ def tab_sensory(ing):
     obj_desc  = safe(ing.get("objective_description", ""))
     subj_desc = safe(ing.get("subjective_description", ""))
 
+    # PROFESSIONAL 텍스트 가공 (영어/한글 분리 및 정렬 시도)
+    # 만약 데이터가 한글로만 되어 있다면 그대로 노출하되, 영문이 섞여 있다면 영문을 위로 배치
+    display_obj = obj_desc
+    if obj_desc != "—":
+        import re
+        # 영문과 한글이 섞여 있는지 체크 (단순 줄바꿈 처리 포함)
+        en_parts = []
+        kr_parts = []
+        for line in obj_desc.split("\n"):
+            if re.search('[가-힣]', line):
+                kr_parts.append(line.strip())
+            else:
+                en_parts.append(line.strip())
+        
+        if en_parts and kr_parts:
+            display_obj = f"{' '.join(en_parts)}<br/><div style='margin-top:8px; color:#6b7280;'>{' '.join(kr_parts)}</div>"
+        elif kr_parts and not en_parts:
+            # 한글만 있는 경우 (현재 상태)
+            display_obj = kr_parts[0]
+
     st.markdown(f"""
     <div class="two-col">
       <div class="col-box">
-        <div class="col-ttl">Professional (EN)</div>
-        <div class="col-tx">{obj_desc}</div>
+        <div class="col-ttl">Professional</div>
+        <div class="col-tx" style="line-height:1.6;">{display_obj}</div>
       </div>
       <div class="col-box">
-        <div class="col-ttl">Personal Memory (KR)</div>
-        <div class="col-tx">{subj_desc}</div>
+        <div class="col-ttl">Personal Memory</div>
+        <div class="col-tx" style="line-height:1.6;">{subj_desc}</div>
       </div>
     </div>
     """, unsafe_allow_html=True)
 
-    # Odor Descriptors
-    descriptors = str(ing.get("odor_descriptors", "")).split(",")
+    # Odor Descriptors (정제 로직 적용)
     st.markdown('<div class="slbl">Odor Descriptors</div>', unsafe_allow_html=True)
-    tags_html = "".join([f'<span class="otag">{d.strip()}</span>' for d in descriptors if d.strip() not in ("N/A", "nan", "")])
+    tags_html = render_odor_tags(ing.get("odor_descriptors", ""))
     st.markdown(f"<div>{tags_html}</div>", unsafe_allow_html=True)
 
     # Detailed Notes
@@ -545,7 +581,7 @@ def tab_chemistry(ing):
     st.markdown('<div class="slbl">Chemical Identity</div>', unsafe_allow_html=True)
     st.markdown(f"""
     <div class="chem4">
-      <div class="ccard"><div class="cval-container"><div class="cval">{formula}</div></div><div class="ckey">Formula</div></div>
+      <div class="ccard"><div class="cval-container"><div class="cval">{format_formula(formula)}</div></div><div class="ckey">Formula</div></div>
       <div class="ccard"><div class="cval-container"><div class="cval">{weight}</div></div><div class="ckey">MW g/mol</div></div>
       <div class="ccard"><div class="cval-container"><div class="cval">{cid}</div></div><div class="ckey">PubChem CID</div></div>
       <div class="ccard"><div class="cval-container"><div class="cval">{cas}</div></div><div class="ckey">CAS No.</div></div>
