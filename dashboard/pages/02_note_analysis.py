@@ -86,7 +86,7 @@ def load_data():
 
 def main():
     st.markdown('<div class="pg-title">📊 Note Analysis</div>', unsafe_allow_html=True)
-    st.markdown('<div class="pg-desc">원료 데이터를 바탕으로 한 향기 분포 및 통계 분석입니다.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pg-desc">원료 데이터를 바탕으로 한 향 분포 및 통계 분석입니다.</div>', unsafe_allow_html=True)
 
     df = load_data()
     if df.empty:

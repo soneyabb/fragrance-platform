@@ -76,7 +76,7 @@ st.markdown("""
 
 def main():
     st.markdown('<div class="pg-title">📈 Trend Insights</div>', unsafe_allow_html=True)
-    st.markdown('<div class="pg-desc">시장 반응 및 소셜 데이터를 기반으로 한 향료 트렌드 시뮬레이션입니다.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pg-desc">시장 반응 및 소셜 데이터 기반의 실시간 향료 트렌드를 파악합니다.</div>', unsafe_allow_html=True)
 
     # 상단 필터 바
     st.markdown('<div class="top-bar">', unsafe_allow_html=True)

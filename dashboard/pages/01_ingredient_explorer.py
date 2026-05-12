@@ -12,7 +12,7 @@ import os
 
 st.set_page_config(
     page_title="Ingredient Explorer",
-    page_icon="🔍",
+    page_icon="⚗️",
     layout="wide"
 )
 
@@ -664,8 +664,8 @@ def tab_industry(ing):
 
 # ── 메인 ─────────────────────────────────────────────────────────────────────
 def main():
-    st.markdown('<div class="pg-title">🔍 Ingredient Explorer</div>', unsafe_allow_html=True)
-    st.markdown('<div class="pg-desc">조향 원료의 화학적 데이터와 감각 분석 정보를 탐색하는 고급 라이브러리입니다.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pg-title">⚗️ Ingredient Explorer</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pg-desc">화학적 데이터와 조향 노트를 결합한 원료 라이브러리입니다.</div>', unsafe_allow_html=True)
 
     df = load_data()
     if df.empty:
