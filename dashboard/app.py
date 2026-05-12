@@ -54,6 +54,20 @@ st.markdown("""
         text-transform: capitalize;
     }
 
+    /* 사이드바의 'app' 글자를 'Fragrance Intelligence'로 교체 */
+    [data-testid="stSidebarNav"] ul li:first-child span {
+        visibility: hidden;
+        position: relative;
+    }
+    [data-testid="stSidebarNav"] ul li:first-child span::after {
+        content: "Fragrance Intelligence";
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        white-space: nowrap;
+    }
+
     /* Hero Section */
     .hero-container {
         background: #1e2022;
