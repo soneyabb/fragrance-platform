@@ -7,3 +7,4 @@ praw
 networkx
 pyvis
 sqlalchemy
+numpy
