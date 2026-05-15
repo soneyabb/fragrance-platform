@@ -9,3 +9,5 @@ pyvis
 sqlalchemy
 numpy
 scikit-learn
+feedparser
+python-dotenv
