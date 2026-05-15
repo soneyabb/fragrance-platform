@@ -8,3 +8,4 @@ networkx
 pyvis
 sqlalchemy
 numpy
+scikit-learn
