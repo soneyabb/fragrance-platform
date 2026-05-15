@@ -151,9 +151,12 @@ html, body, [data-testid="stAppViewContainer"] {
 # ─────────────────────────────────────────
 @st.cache_data(ttl=3600)
 def load_data():
-    db_path = "data/fragrance_db.sqlite"
+    # 스크립트 위치 기준 절대 경로 생성
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    db_path = os.path.join(base_dir, "data", "fragrance_db.sqlite")
+    
     if not os.path.exists(db_path):
-        st.error("DB 파일 없음. processors/load_to_db.py 먼저 실행하세요.")
+        st.error(f"DB 파일 없음: {db_path}")
         return pd.DataFrame()
     conn = sqlite3.connect(db_path)
     df = pd.read_sql("SELECT * FROM ingredients", conn)

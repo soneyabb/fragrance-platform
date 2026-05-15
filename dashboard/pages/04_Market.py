@@ -138,7 +138,10 @@ html, body, [data-testid="stAppViewContainer"] {
 @st.cache_data(ttl=3600)
 def load_ingredients():
     """원료 DB — CURATED 우선 정렬"""
-    db_path = "data/fragrance_db.sqlite"
+    # 스크립트 위치 기준 절대 경로 생성
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    db_path = os.path.join(base_dir, "data", "fragrance_db.sqlite")
+    
     if not os.path.exists(db_path):
         return pd.DataFrame()
     conn = sqlite3.connect(db_path)
@@ -164,10 +167,13 @@ def load_parfumo():
     Parfumo TidyTuesday CSV 로드
     경로: data/raw/parfumo_data.csv
     컬럼 (TidyTuesday 2024-12-10 기준):
-      name, brand, year, rating, notes_top, notes_middle, notes_base
+      Name, Brand, Release_Year, Rating_Value, Top_Notes, Middle_Notes, Base_Notes
     notes_* 컬럼에 원료명이 쉼표 구분으로 저장됨
     """
-    csv_path = "data/raw/parfumo_data.csv"
+    # 스크립트 위치 기준 절대 경로 생성
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    csv_path = os.path.join(base_dir, "data", "raw", "parfumo_data.csv")
+    
     if not os.path.exists(csv_path):
         return pd.DataFrame()
     try:
@@ -200,9 +206,9 @@ def get_ingredient_market(parfumo_df: pd.DataFrame, ingredient_name: str):
             return False
         return name_lower in str(cell).lower()
 
-    mask_top  = parfumo_df["notes_top"].apply(matches)
-    mask_middle = parfumo_df["notes_middle"].apply(matches)
-    mask_base = parfumo_df["notes_base"].apply(matches)
+    mask_top  = parfumo_df["Top_Notes"].apply(matches)
+    mask_middle = parfumo_df["Middle_Notes"].apply(matches)
+    mask_base = parfumo_df["Base_Notes"].apply(matches)
     mask_any  = mask_top | mask_middle | mask_base
 
     total = mask_any.sum()
@@ -218,14 +224,14 @@ def get_ingredient_market(parfumo_df: pd.DataFrame, ingredient_name: str):
     perf_rows = []
     for idx, row in parfumo_df[mask_any].iterrows():
         pos = []
-        if matches(row.get("notes_top")):   pos.append("Top")
-        if matches(row.get("notes_middle")): pos.append("Middle")
-        if matches(row.get("notes_base")):   pos.append("Base")
+        if matches(row.get("Top_Notes")):    pos.append("Top")
+        if matches(row.get("Middle_Notes")): pos.append("Middle")
+        if matches(row.get("Base_Notes")):   pos.append("Base")
         perf_rows.append({
-            "name":     row.get("name", "—"),
-            "brand":    row.get("brand", "—"),
-            "year":     row.get("year", "—"),
-            "rating":   row.get("rating", "—"),
+            "name":     row.get("Name", "—"),
+            "brand":    row.get("Brand", "—"),
+            "year":     row.get("Release_Year", "—"),
+            "rating":   row.get("Rating_Value", "—"),
             "position": " / ".join(pos),
         })
 
@@ -272,7 +278,7 @@ def get_top30_ingredients(_parfumo_df: pd.DataFrame, curated_names: list):
     from collections import Counter
     counter = Counter()
 
-    for col in ["notes_top", "notes_middle", "notes_base"]:
+    for col in ["Top_Notes", "Middle_Notes", "Base_Notes"]:
         if col not in _parfumo_df.columns:
             continue
         for cell in _parfumo_df[col].dropna():

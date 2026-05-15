@@ -325,7 +325,10 @@ def fetch_semantic_scholar(query: str, limit: int = 5):
 @st.cache_data(ttl=3600)
 def load_curated_names():
     import sqlite3
-    db_path = "data/fragrance_db.sqlite"
+    # 스크립트 위치 기준 절대 경로 생성
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    db_path = os.path.join(base_dir, "data", "fragrance_db.sqlite")
+    
     if not os.path.exists(db_path):
         return []
     conn = sqlite3.connect(db_path)
