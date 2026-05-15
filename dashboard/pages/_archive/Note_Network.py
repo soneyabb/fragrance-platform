@@ -78,19 +78,25 @@ def main():
         st.warning("데이터가 없습니다.")
         return
 
-    # 산업 분야 컬러 매핑
+    # 산업 분야 컬러 매핑 (요청된 색상 반영)
     industry_colors = {
-        "perfume": "#1e2022", "cosmetic": "#9ca3af", "food": "#e2ddd6",
-        "tea_coffee": "#fcd9a0", "home_scent": "#bfdbfe", "fabric": "#a7f3d0",
-        "pharmaceutical": "#fef3e2"
+        "perfume": "#1e2022", 
+        "cosmetic": "#1e40af", 
+        "food": "#2d6a4f",
+        "tea_coffee": "#92400e", 
+        "home_scent": "#4a1d96", 
+        "fabric": "#6b7280",
+        "pharmaceutical": "#065f46"
     }
 
-    # 상단 필터 바
+    # 상단 필터 바 (perfume 제외한 6개 산업군 기본 선택)
+    default_selected = [ind for ind in industry_colors.keys() if ind != "perfume"]
+    
     st.markdown('<div class="top-bar">', unsafe_allow_html=True)
     selected_industries = st.multiselect(
         "Select Industries to Analyze Connectivity", 
         list(industry_colors.keys()), 
-        default=list(industry_colors.keys())[:4]
+        default=default_selected
     )
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -102,7 +108,16 @@ def main():
         valid_usages = [u for u in usages if u in selected_industries]
         
         if valid_usages:
-            G.add_node(ingredient, color="#CCCCCC", size=12, title=f"Family: {row['odor_family']}")
+            # 연결 수에 따른 노드 크기 결정 (1개:10, 2개:15, 3개 이상:20)
+            conn_count = len(valid_usages)
+            if conn_count == 1:
+                node_size = 10
+            elif conn_count == 2:
+                node_size = 15
+            else:
+                node_size = 20
+                
+            G.add_node(ingredient, color="#CCCCCC", size=node_size, title=f"Family: {row['odor_family']} ({conn_count} industries)")
             for usage in valid_usages:
                 G.add_node(usage, color=industry_colors.get(usage, "#000000"), size=25, shape="diamond")
                 G.add_edge(ingredient, usage)
