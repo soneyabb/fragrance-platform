@@ -1,67 +1,330 @@
-﻿name,pubchem_cid,cas_number,molecular_formula,molecular_weight,iupac_name,smiles,pubchem_note
-Alpine Lavender,8294,115-95-7,C12H20O2,196.29,"3,7-dimethylocta-1,6-dien-3-yl acetate",N/A,검색어: 'Linalyl acetate'
-Apple,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Bamboo,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Basil,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Bay leaf,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Bergamot,8294,115-95-7,C12H20O2,196.29,"3,7-dimethylocta-1,6-dien-3-yl acetate",N/A,검색어: 'Linalyl acetate'
-Bitter Lemon,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
-Cassis Fruits,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Clove,3314,97-53-0,C10H12O2,164.20,2-methoxy-4-prop-2-enylphenol,N/A,검색어: 'Eugenol'
-Fig,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Galbanum Plant,15837102,N/A,C10H16,136.23,"2,6,6-trimethylbicyclo[3.1.1]hept-1-ene",N/A,검색어: 'Pinene'
-Grapefruit,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
-Green Note,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Green Tea,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Lime,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
-May Rose,6054,60-12-8,C8H10O,122.16,2-phenylethanol,N/A,검색어: 'Phenyl ethyl alcohol'
-Orange,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'Limonene'
-Peach,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Rosewood,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Tangerine,440917,5989-27-5,C10H16,136.23,(4R)-1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,검색어: 'd-Limonene'
-Aldehydal,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Bitter Orange Flower,6549,78-70-6,C10H18O,154.25,"3,7-dimethylocta-1,6-dien-3-ol",N/A,검색어: 'Linalool'
-Blackberry,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Carnation,3314,97-53-0,C10H12O2,164.20,2-methoxy-4-prop-2-enylphenol,N/A,검색어: 'Eugenol'
-Cinnamon,637511,104-55-2,C9H8O,132.16,(E)-3-phenylprop-2-enal,N/A,검색어: 'Cinnamic aldehyde'
-Civet Cat Oil,5315941,542-46-1,C17H30O,250.4,(9Z)-cycloheptadec-9-en-1-one,N/A,동물성 — 주성분(Civetone) 기준
-Geranium,637566,106-24-1,C10H18O,154.25,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",N/A,검색어: 'Geraniol'
-Ginger,6434062,29714-87-2,C10H16,136.23,"(3E,5E)-3,7-dimethylocta-1,3,5-triene",N/A,검색어: 'Ocimene'
-Honeysuckle,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Hyacinth,244,100-51-6,C7H8O,108.14,phenylmethanol,N/A,검색어: 'Benzyl alcohol'
-Ivy,46219816,N/A,C20H12F4N4O,400.3,3-[2-(2-fluorophenyl)pyrazol-3-yl]-1-[3-(trifluoromethyl)phenyl]pyridazin-4-one,N/A,검색어: 'Ivy'
-Jasmin,8785,140-11-4,C9H10O2,150.17,benzyl acetate,N/A,검색어: 'Benzyl acetate'
-Lilac Flowers,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Lily of the Valley,6549,78-70-6,C10H18O,154.25,"3,7-dimethylocta-1,6-dien-3-ol",N/A,검색어: 'Linalool'
-Pinewood,17100,98-55-5,C10H18O,154.25,2-(4-methylcyclohex-3-en-1-yl)propan-2-ol,N/A,검색어: 'Terpineol'
-Rose Petals,637566,106-24-1,C10H18O,154.25,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",N/A,검색어: 'Geraniol'
-Rosemarin,64685,507-70-0,C10H18O,154.25,"1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol",N/A,검색어: 'Borneol'
-Sea Scent,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Violet Leaves,24680,232-396-8,C13H20O,192.30,"4-(2,6,6-trimethylcyclohex-2-en-1-yl)but-3-en-2-one",N/A,검색어: 'Ionone'
-Ylang Ylang,853433,97-54-1,C10H12O2,164.20,2-methoxy-4-[(E)-prop-1-enyl]phenol,N/A,검색어: 'Isoeugenol'
-Amber,10857465,6790-58-5,C16H28O,236.39,"(3aR,5aS,9aS,9bR)-3a,6,6,9a-tetramethyl-2,4,5,5a,7,8,9,9b-octahydro-1H-benzo[e][1]benzofuran",N/A,동물성 — 주성분(Ambroxan) 기준
-Beaver Oil,11368680,N/A,C15H23NO2,249.35,"[(3S,6S,9R,9aS)-6-(furan-3-yl)-9-methyl-2,3,4,6,7,8,9,9a-octahydro-1H-quinolizin-3-yl]methanol",N/A,동물성 — 주성분(Castoramine) 기준
-Benzoin,8400,119-53-9,C14H12O2,212.24,"2-hydroxy-1,2-diphenylethanone",N/A,검색어: 'Benzoin'
-Cedarwood,521207,234-257-7,C15H24,204.35,"2,6,6,8-tetramethyltricyclo[5.3.1.01,5]undec-8-ene",N/A,검색어: 'Cedrene'
-Iris,11005,544-63-8,C14H28O2,228.37,tetradecanoic acid,N/A,검색어: 'Myristic acid'
-Moss,24680,232-396-8,C13H20O,192.30,"4-(2,6,6-trimethylcyclohex-2-en-1-yl)but-3-en-2-one",N/A,검색어: 'Ionone'
-Musk,7160826,10403-00-6,C16H30O,238.41,(3R)-3-methylcyclopentadecan-1-one,N/A,동물성 — 주성분(Muscone) 기준
-Patchouli,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Sandalwood,12315259,73890-74-1,C15H24O,220.35,"(E)-2-methyl-5-[(1S,2S,4R)-2-methyl-3-methylidene-2-bicyclo[2.2.1]heptanyl]pent-2-en-1-ol",N/A,검색어: 'Santalol'
-Tonka Nut,323,91-64-5,C9H6O2,146.14,chromen-2-one,N/A,검색어: 'Coumarin'
-Tuberosa,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Vanilla,8467,121-32-4,C9H10O3,166.17,3-ethoxy-4-hydroxybenzaldehyde,N/A,검색어: 'Ethyl vanillin'
-Vetiver,101549,201-949-5,C15H24O,220.35,"4,8-dimethyl-2-propan-2-ylidene-3,3a,4,5,6,8a-hexahydro-1H-azulen-6-ol",N/A,검색어: 'Vetiverol'
-White Musk,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
-Black tea,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Cherry blossom,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Gardenia,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Jasmin sambae,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Juniper berry,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Leather,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Mimosa,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Peony,135465069,1658-56-6,C20H13N2NaO4S,400.4,sodium 4-[(2-hydroxynaphthalen-1-yl)diazenyl]naphthalene-1-sulfonate,N/A,검색어: 'Peony'
-Plumeria,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Tea Rose,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
-Tulip,60822,134523-03-8,C66H68CaF2N4O10,1155.3,"calcium bis((3R,5R)-7-[2-(4-fluorophenyl)-3-phenyl-4-(phenylcarbamoyl)-5-propan-2-ylpyrrol-1-yl]-3,5-dihydroxyheptanoate)",N/A,검색어: 'Tulip'
-Verbena,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (시도: 학명/성분/원료명)
+﻿name,source,pubchem_cid,cas_number,molecular_formula,molecular_weight,iupac_name,smiles,logp,boiling_point,vapor_pressure,pubchem_note
+"Acetic acid, anhydride, reaction products with 1,5,10-Trimethyl-1,5,9-cyclododecatriene",ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Acetylated Vetiver oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Allyl phenoxyacetate,ifra,24117,7493-74-5,C11H12O3,192.21,prop-2-enyl 2-phenoxyacetate,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(7493-74-5)
+alpha-Amyl cinnamic alcohol,ifra,6076971,101-85-9,C14H20O,204.31,(2Z)-2-benzylideneheptan-1-ol,N/A,4.4,N/A,N/A,CAS 검색 성공: CAS(101-85-9)
+alpha-Amyl cinnamic aldehyde,ifra,31209,122-40-7,C14H18O,202.29,2-benzylideneheptanal,N/A,4.2,N/A,N/A,CAS 검색 성공: CAS(122-40-7)
+Anisyl alcohol,ifra,7738,105-13-5,C8H10O2,138.16,(4-methoxyphenyl)methanol,N/A,1.1,N/A,N/A,CAS 검색 성공: CAS(105-13-5)
+Benzaldehyde,ifra,240,100-52-7,C7H6O,106.12,benzaldehyde,N/A,1.5,N/A,N/A,CAS 검색 성공: CAS(100-52-7)
+Benzyl alcohol,ifra,244,100-51-6,C7H8O,108.14,phenylmethanol,N/A,1.1,N/A,N/A,CAS 검색 성공: CAS(100-51-6)
+Benzyl benzoate,ifra,2345,120-51-4,C14H12O2,212.24,benzyl benzoate,N/A,4,N/A,N/A,CAS 검색 성공: CAS(120-51-4)
+Benzyl cinnamate,ifra,5273469,103-41-3,C16H14O2,238.28,benzyl (E)-3-phenylprop-2-enoate,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(103-41-3)
+Benzyl salicylate,ifra,8363,118-58-1,C14H12O3,228.24,benzyl 2-hydroxybenzoate,N/A,3.2,N/A,N/A,CAS 검색 성공: CAS(118-58-1)
+alpha-Butylcinnamaldehyde,ifra,5385520,7492-44-6,C13H16O,188.26,(2E)-2-benzylidenehexanal,N/A,3.7,N/A,N/A,CAS 검색 성공: CAS(7492-44-6)
+3-(m-tert-Butylphenyl)-2-methylpropionaldehyde (m-BMHCA),ifra,112494,62518-65-4,C14H20O,204.31,3-(3-tert-butylphenyl)-2-methylpropanal,N/A,3.9,N/A,N/A,CAS 검색 성공: CAS(62518-65-4)
+p-tert-Butyldihydrocinnamaldehyde,ifra,64832,18127-01-0,C13H18O,190.28,3-(4-tert-butylphenyl)propanal,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(18127-01-0)
+p-tert-Butyl-α-methylhydrocinnamic aldehyde (p-BMHCA),ifra,228987,80-54-6,C14H20O,204.31,3-(4-tert-butylphenyl)-2-methylpropanal,N/A,3.9,N/A,N/A,CAS 검색 성공: CAS(80-54-6)
+Carvone,ifra,7439,99-49-0,C10H14O,150.22,2-methyl-5-prop-1-en-2-ylcyclohex-2-en-1-one,N/A,2.4,N/A,N/A,CAS 검색 성공: CAS(99-49-0)
+Cinnamic alcohol,ifra,5315892,104-54-1,C9H10O,134.17,(E)-3-phenylprop-2-en-1-ol,N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(104-54-1)
+Cinnamic aldehyde,ifra,637511,104-55-2,C9H8O,132.16,(E)-3-phenylprop-2-enal,N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(104-55-2)
+Cinnamic aldehyde dimethyl acetal,ifra,5463228,63511-93-3,C11H14O2,178.23,"[(E)-3,3-dimethoxyprop-1-enyl]benzene",N/A,2.2,N/A,N/A,CAS 검색 성공: CAS(4364-06-1)
+Cinnamyl nitrile,ifra,1550846,4360-47-8,C9H7N,129.16,(E)-3-phenylprop-2-enenitrile,N/A,2,N/A,N/A,CAS 검색 성공: CAS(1885-38-7)
+Citral,ifra,638011,5392-40-5,C10H16O,152.23,"(2E)-3,7-dimethylocta-2,6-dienal",N/A,3,N/A,N/A,CAS 검색 성공: CAS(5392-40-5)
+Citronellol,ifra,8842,106-22-9,C10H20O,156.26,"3,7-dimethyloct-6-en-1-ol",N/A,3.2,N/A,N/A,CAS 검색 성공: CAS(106-22-9)
+Coumarin,ifra,323,91-64-5,C9H6O2,146.14,chromen-2-one,N/A,1.4,N/A,N/A,CAS 검색 성공: CAS(91-64-5)
+Cuminaldehyde,ifra,326,122-03-2,C10H12O,148.20,4-propan-2-ylbenzaldehyde,N/A,2.7,N/A,N/A,CAS 검색 성공: CAS(122-03-2)
+Cyclamen aldehyde,ifra,517827,103-95-7,C13H18O,190.28,2-methyl-3-(4-propan-2-ylphenyl)propanal,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(103-95-7)
+Cyclopentadecanolide,ifra,235414,106-02-5,C15H28O2,240.38,oxacyclohexadecan-2-one,N/A,5.8,N/A,N/A,CAS 검색 성공: CAS(106-02-5)
+Dibenzyl ether,ifra,7657,103-50-4,C14H14O,198.26,phenylmethoxymethylbenzene,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(103-50-4)
+"6,7-Dihydro-1,1,2,3,3-pentamethyl-4(5H)-indanone (DPMI)",ifra,92292,33704-61-9,C14H22O,206.32,"1,1,2,3,3-pentamethyl-2,5,6,7-tetrahydroinden-4-one",N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(33704-61-9)
+Dihydrocoumarin,ifra,660,119-84-6,C9H8O2,148.16,"3,4-dihydrochromen-2-one",N/A,1.6,N/A,N/A,CAS 검색 성공: CAS(119-84-6)
+Dimethylcyclohex-3-ene-1-carbaldehyde (mixed isomers),ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+"1-(5,5-Dimethyl-1-cyclohexen-1-yl)pent-4-en-1-one",ifra,92606,56973-85-4,C13H20O,192.30,"1-(5,5-dimethylcyclohexen-1-yl)pent-4-en-1-one",N/A,3.6,N/A,N/A,CAS 검색 성공: CAS(56973-85-4)
+"2,2-Dimethyl-3-(3-tolyl)propan-1-ol",ifra,175948,103694-68-4,C12H18O,178.27,"2,2-dimethyl-3-(3-methylphenyl)propan-1-ol",N/A,3.1,N/A,N/A,CAS 검색 성공: CAS(103694-68-4)
+2-Ethoxy-4-methylphenol,ifra,75715,2563-07-7,C9H12O2,152.19,2-ethoxy-4-methylphenol,N/A,2.3,N/A,N/A,CAS 검색 성공: CAS(2563-07-7)
+p-Ethylbenzaldehyde,ifra,20861,4748-78-1,C9H10O,134.17,4-ethylbenzaldehyde,N/A,2.4,N/A,N/A,CAS 검색 성공: CAS(4748-78-1)
+Eugenol,ifra,3314,97-53-0,C10H12O2,164.20,2-methoxy-4-prop-2-enylphenol,N/A,2,N/A,N/A,CAS 검색 성공: CAS(97-53-0)
+Farnesol,ifra,445070,4602-84-0,C15H26O,222.37,"(2E,6E)-3,7,11-trimethyldodeca-2,6,10-trien-1-ol",N/A,4.8,N/A,N/A,CAS 검색 성공: CAS(4602-84-0)
+Geraniol,ifra,637566,106-24-1,C10H18O,154.25,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",N/A,2.9,N/A,N/A,CAS 검색 성공: CAS(106-24-1)
+2-Heptylidene cyclopentan-1-one,ifra,6441035,39189-74-7,C12H20O,180.29,(2E)-2-heptylidenecyclopentan-1-one,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(39189-74-7)
+2-Hexenal,ifra,5281168,6728-26-3,C6H10O,98.14,(E)-hex-2-enal,N/A,1.5,N/A,N/A,CAS 검색 성공: CAS(505-57-7)
+alpha-Hexyl cinnamic aldehyde,ifra,1550884,101-86-0,C15H20O,216.32,(2E)-2-benzylideneoctanal,N/A,4.8,N/A,N/A,CAS 검색 성공: CAS(101-86-0)
+alpha-Hexylidene cyclopentanone,ifra,6385721,17373-89-6,C11H18O,166.26,(2E)-2-hexylidenecyclopentan-1-one,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(17373-89-6)
+Hexyl salicylate,ifra,22629,6259-76-3,C13H18O3,222.28,hexyl 2-hydroxybenzoate,N/A,5.7,N/A,N/A,CAS 검색 성공: CAS(6259-76-3)
+Hydroxycitronellal,ifra,7888,107-75-5,C10H20O2,172.26,"7-hydroxy-3,7-dimethyloctanal",N/A,1.6,N/A,N/A,CAS 검색 성공: CAS(107-75-5)
+3 and 4-(4-Hydroxy-4-methylpentyl)-3-cyclohexene-1-carboxaldehyde (HMPCC),ifra,91604,31906-04-4,C13H22O2,210.31,4-(4-hydroxy-4-methylpentyl)cyclohex-3-ene-1-carbaldehyde,N/A,1.7,N/A,N/A,CAS 검색 성공: CAS(31906-04-4)
+p-Isobutyl-alpha-methyl hydrocinnamaldehyde,ifra,110914,6658-48-6,C14H20O,204.31,2-methyl-3-[4-(2-methylpropyl)phenyl]propanal,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(6658-48-6)
+Isocyclocitral,ifra,16204527,1335-66-6,C20H32O2,304.5,"2,4,6-trimethylcyclohex-3-ene-1-carbaldehyde;3,5,6-trimethylcyclohex-3-ene-1-carbaldehyde",N/A,N/A,N/A,N/A,CAS 검색 성공: CAS(1335-66-6)
+Isocyclogeraniol,ifra,109458,68527-77-5,C10H18O,154.25,"(2,4,6-trimethylcyclohex-3-en-1-yl)methanol",N/A,2,N/A,N/A,CAS 검색 성공: CAS(68527-77-5)
+Isoeugenol,ifra,853433,97-54-1,C10H12O2,164.20,2-methoxy-4-[(E)-prop-1-enyl]phenol,N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(97-54-1)
+Jasmine absolute (grandiflorum),ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Jasmine absolute (sambac),ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Melissa oil (genuine Melissa officinalis L.),ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Perilla aldehyde,ifra,16441,2111-75-3,C10H14O,150.22,4-prop-1-en-2-ylcyclohexene-1-carbaldehyde,N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(2111-75-3)
+Menthadiene-7-methyl formate,ifra,111516,272-066-0,C12H18O2,194.27,"2-(4-propan-2-ylcyclohexa-1,4-dien-1-yl)ethyl formate",N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(68683-20-5)
+p-Methoxybenzaldehyde,ifra,31244,123-11-5,C8H8O2,136.15,4-methoxybenzaldehyde,N/A,1.8,N/A,N/A,CAS 검색 성공: CAS(123-11-5)
+o-Methoxycinnamaldehyde,ifra,641298,1504-74-1,C10H10O2,162.18,(E)-3-(2-methoxyphenyl)prop-2-enal,N/A,1.7,N/A,N/A,CAS 검색 성공: CAS(1504-74-1)
+Methoxy dicyclopentadiene carboxaldehyde,ifra,163529,86803-90-9,C12H18O2,194.27,"8-methoxytricyclo[5.2.1.02,6]decane-4-carbaldehyde",N/A,1.4,N/A,N/A,CAS 검색 성공: CAS(86803-90-9)
+4-Methoxy-alpha-methylbenzenepropanal,ifra,64813,5462-06-6,C11H14O2,178.23,3-(4-methoxyphenyl)-2-methylpropanal,N/A,2.2,N/A,N/A,CAS 검색 성공: CAS(5462-06-6)
+2-Methoxy-4-methylphenol,ifra,7144,93-51-6,C8H10O2,138.16,2-methoxy-4-methylphenol,N/A,1.3,N/A,N/A,CAS 검색 성공: CAS(93-51-6)
+"alpha-Methyl-1,3-benzodioxole-5-propionaldehyde (MMDHCA)",ifra,64805,1205-17-0,C11H12O3,192.21,"3-(1,3-benzodioxol-5-yl)-2-methylpropanal",N/A,2.2,N/A,N/A,CAS 검색 성공: CAS(1205-17-0)
+alpha-Methyl cinnamic aldehyde,ifra,5372813,N/A,C10H10O,146.19,(E)-2-methyl-3-phenylprop-2-enal,N/A,2.2,N/A,N/A,CAS 검색 성공: CAS(101-39-3)
+"6-Methyl-3,5-heptadien-2-one",ifra,5370101,1604-28-0,C8H12O,124.18,"(3E)-6-methylhepta-3,5-dien-2-one",N/A,2,N/A,N/A,CAS 검색 성공: CAS(1604-28-0)
+Methyl heptine carbonate,ifra,8092,111-12-6,C9H14O2,154.21,methyl oct-2-ynoate,N/A,3.2,N/A,N/A,CAS 검색 성공: CAS(111-12-6)
+"Methyl ionone, mixed isomers",ifra,5371084,1335-46-2,C14H22O,206.32,"(E)-1-(2,6,6-trimethylcyclohex-2-en-1-yl)pent-1-en-3-one",N/A,3.4,N/A,N/A,CAS 검색 성공: CAS(1335-46-2)
+Methyl octine carbonate,ifra,8137,111-80-8,C10H16O2,168.23,methyl non-2-ynoate,N/A,3.7,N/A,N/A,CAS 검색 성공: CAS(111-80-8)
+3-Methyl-2-(pentyloxy)cyclopent-2-en-1-one,ifra,111783,68922-13-4,C11H18O2,182.26,3-methyl-2-pentoxycyclopent-2-en-1-one,N/A,2.4,N/A,N/A,CAS 검색 성공: CAS(68922-13-4)
+2-Nonyn-1-al dimethyl acetal,ifra,25812,236-249-9,C11H20O2,184.27,"1,1-dimethoxynon-2-yne",N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(13257-44-8)
+Oakmoss extracts,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+"1-(1,2,3,4,5,6,7,8 Octahydro-2,3,8,8-tetramethyl-2-naphthalenyl) ethanone (OTNE)",ifra,108242,54464-57-2,C16H26O,234.38,"1-(2,3,8,8-tetramethyl-1,3,4,5,6,7-hexahydronaphthalen-2-yl)ethanone",N/A,3.6,N/A,N/A,CAS 검색 성공: CAS(54464-57-2)
+1-Octen-3-yl acetate,ifra,17121,2442-10-6,C10H18O2,170.25,oct-1-en-3-yl acetate,N/A,3.1,N/A,N/A,CAS 검색 성공: CAS(2442-10-6)
+Opoponax,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Peru balsam,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+"1-(2,4,4,5,5-Pentamethyl-1-cyclopenten-1-yl)ethan-1-one",ifra,83177,236-080-0,C12H20O,180.29,"1-(2,4,4,5,5-pentamethylcyclopenten-1-yl)ethanone",N/A,2.8,N/A,N/A,CAS 검색 성공: CAS(13144-88-2)
+Phenylacetaldehyde,ifra,998,122-78-1,C8H8O,120.15,2-phenylacetaldehyde,N/A,1.8,N/A,N/A,CAS 검색 성공: CAS(122-78-1)
+3-Phenylbutanal,ifra,85979,16251-77-7,C10H12O,148.20,3-phenylbutanal,N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(16251-77-7)
+2-Phenylpropionaldehyde,ifra,7146,93-53-8,C9H10O,134.17,2-phenylpropanal,N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(93-53-8)
+3-Propylidenephthalide,ifra,28500,17369-59-4,C11H10O2,174.20,3-propylidene-2-benzofuran-1-one,N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(17369-59-4)
+Rose ketones,ifra,5366074,23726-93-4,C13H18O,190.28,"(E)-1-(2,6,6-trimethylcyclohexa-1,3-dien-1-yl)but-2-en-1-one",N/A,3.2,N/A,N/A,CAS 검색 성공: CAS(23696-85-7)
+Styrax,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Tea leaf absolute,ifra,1287,283-519-7,C22H18O11,458.4,"[5,7-dihydroxy-2-(3,4,5-trihydroxyphenyl)-3,4-dihydro-2H-chromen-3-yl] 3,4,5-trihydroxybenzoate",N/A,1.2,N/A,N/A,CAS 검색 성공: CAS(84650-60-2)
+Treemoss extracts,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+"o,m,p-Tolualdehydes and their mixtures",ifra,10722,529-20-4,C8H8O,120.15,2-methylbenzaldehyde,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(529-20-4)
+"2,6,6-Trimethylcyclohex-1,3-dienyl methanal",ifra,61041,116-26-7,C10H14O,150.22,"2,6,6-trimethylcyclohexa-1,3-diene-1-carbaldehyde",N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(116-26-7)
+Verbena oil and absolute (Lippia citriodora Kunth.),ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Ylang ylang extracts,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Acetyl hexamethyl indan (AHMI),ifra,47167,15323-35-0,C17H24O,244.37,"1-(1,1,2,3,3,6-hexamethyl-2H-inden-5-yl)ethanone",N/A,4.8,N/A,N/A,CAS 검색 성공: CAS(15323-35-0)
+Angelica root oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Bergamot oil expressed,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Bitter orange peel oil expressed,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Citrus oils and other furocoumarins containing essential oils,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Cumin oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Grapefruit oil expressed,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Lemon oil cold pressed,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Lime oil expressed,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Methyl N-methylanthranilate,ifra,6826,85-91-6,C9H11NO2,165.19,methyl 2-(methylamino)benzoate,N/A,2.3,N/A,N/A,CAS 검색 성공: CAS(85-91-6)
+Methyl beta-naphthyl ketone,ifra,7122,93-08-3,C12H10O,170.21,1-naphthalen-2-ylethanone,N/A,3.2,N/A,N/A,CAS 검색 성공: CAS(93-08-3)
+Rue oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Tagetes oil and absolute,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Furfural,ifra,7362,98-01-1,C5H4O2,96.08,furan-2-carbaldehyde,N/A,0.4,N/A,N/A,CAS 검색 성공: CAS(98-01-1)
+Estragole,ifra,8815,140-67-0,C10H12O,148.20,1-methoxy-4-prop-2-enylbenzene,N/A,3.4,N/A,N/A,CAS 검색 성공: CAS(140-67-0)
+Methyl eugenol,ifra,7127,93-15-2,C11H14O2,178.23,"1,2-dimethoxy-4-prop-2-enylbenzene",N/A,2.5,N/A,N/A,CAS 검색 성공: CAS(93-15-2)
+Methyl N-formylanthranilate,ifra,162458,41270-80-8,C9H9NO3,179.17,methyl 2-formamidobenzoate,N/A,1.7,N/A,N/A,CAS 검색 성공: CAS(41270-80-8)
+Thujone,ifra,261491,546-80-5,C10H16O,152.23,"(1S,4R,5R)-4-methyl-1-propan-2-ylbicyclo[3.1.0]hexan-3-one",N/A,2.3,N/A,N/A,CAS 검색 성공: CAS(546-80-5)
+Acetyl ethyl tetramethyl tetralin (AETT),ifra,6930,88-29-9,C18H26O,258.4,"1-(3-ethyl-5,5,8,8-tetramethyl-6,7-dihydronaphthalen-2-yl)ethanone",N/A,5.5,N/A,N/A,CAS 검색 성공: CAS(88-29-9)
+Acetyl isovaleryl,ifra,26204,13706-86-0,C7H12O2,128.17,"5-methylhexane-2,3-dione",N/A,0.9,N/A,N/A,CAS 검색 성공: CAS(13706-86-0)
+Alantroot oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Allyl heptine carbonate,ifra,155771,277-303-1,C11H16O2,180.24,prop-2-enyl oct-2-ynoate,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(73157-43-4)
+Allyl isothiocyanate,ifra,5971,57-06-7,C4H5NS,99.16,3-isothiocyanatoprop-1-ene,N/A,2.4,N/A,N/A,CAS 검색 성공: CAS(57-06-7)
+Amylcyclopentenone,ifra,117549,25564-22-1,C10H16O,152.23,2-pentylcyclopent-2-en-1-one,N/A,3,N/A,N/A,CAS 검색 성공: CAS(25564-22-1)
+Anisylidene acetone,ifra,736889,3815-30-3,C11H12O2,176.21,(E)-4-(4-methoxyphenyl)but-3-en-2-one,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(943-88-4)
+cis-and trans-Asarone,ifra,17903,494-40-6,C12H16O3,208.25,"1,2,4-trimethoxy-5-prop-1-enylbenzene",N/A,3,N/A,N/A,CAS 검색 성공: CAS(494-40-6)
+Benzene,ifra,241,71-43-2,C6H6,78.11,benzene,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(71-43-2)
+Benzyl cyanide,ifra,8794,140-29-4,C8H7N,117.15,2-phenylacetonitrile,N/A,1.6,N/A,N/A,CAS 검색 성공: CAS(140-29-4)
+Benzylidene acetone,ifra,15909,122-57-6,C10H10O,146.19,4-phenylbut-3-en-2-one,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(122-57-6)
+Birch wood pyrolysate,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Boldo oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+"3-Bromo-1,7,7-trimethylbicyclo[2.2.1]heptane-2-one",ifra,6438,76-29-9,C10H15BrO,231.13,"3-bromo-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one",N/A,2.9,N/A,N/A,CAS 검색 성공: CAS(76-29-9)
+Bromostyrene,ifra,7667,203-131-3,C8H7Br,183.04,2-bromoethenylbenzene,N/A,2.9,N/A,N/A,CAS 검색 성공: CAS(103-64-0)
+p-tert-Butylphenol,ifra,7393,98-54-4,C10H14O,150.22,4-tert-butylphenol,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(98-54-4)
+Cade oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Carvone oxide,ifra,100031,33204-74-9,C10H14O2,166.22,1-methyl-4-prop-1-en-2-yl-7-oxabicyclo[4.1.0]heptan-2-one,N/A,1.6,N/A,N/A,CAS 검색 성공: CAS(33204-74-9)
+Chenopodium oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Cinnamylidene acetone,ifra,107512,224-036-3,C12H12O,172.22,"6-phenylhexa-3,5-dien-2-one",N/A,2.7,N/A,N/A,CAS 검색 성공: CAS(4173-44-8)
+Colophony,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+"Costus root oil, absolute and concrete",ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Cyclamen alcohol,ifra,107334,4756-19-8,C13H20O,192.30,2-methyl-3-(4-propan-2-ylphenyl)propan-1-ol,N/A,3.4,N/A,N/A,CAS 검색 성공: CAS(4756-19-8)
+Musk alpha,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Musk KS,ifra,112823,62265-99-0,C8H7Br2NO3,324.95,"1,3-dibromo-2-methoxy-4-methyl-5-nitrobenzene",N/A,3.5,N/A,N/A,CAS 검색 성공: CAS(62265-99-0)
+"2,2-Dichloro-1-methylcyclopropylbenzene",ifra,107129,3591-42-2,C10H10Cl2,201.09,"(2,2-dichloro-1-methylcyclopropyl)benzene",N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(3591-42-2)
+"2,4-Dienals",ifra,5986428,764-40-9,C5H6O,82.10,"(2E)-penta-2,4-dienal",N/A,1,N/A,N/A,CAS 검색 성공: CAS(764-40-9)
+Diethyl maleate,ifra,5271566,141-05-9,C8H12O4,172.18,diethyl (Z)-but-2-enedioate,N/A,0.9,N/A,N/A,CAS 검색 성공: CAS(141-05-9)
+"2,4-Dihydroxy-3-methylbenzaldehyde",ifra,80395,228-369-5,C8H8O3,152.15,"2,4-dihydroxy-3-methylbenzaldehyde",N/A,1.6,N/A,N/A,CAS 검색 성공: CAS(6248-20-0)
+"4,6-Dimethyl-8-tert-butylcoumarin",ifra,28818,17874-34-9,C15H18O2,230.30,"8-tert-butyl-4,6-dimethylchromen-2-one",N/A,3.9,N/A,N/A,CAS 검색 성공: CAS(17874-34-9)
+"3,7-Dimethyl-2-octen-1-ol",ifra,5365836,40607-48-5,C10H20O,156.26,"(E)-3,7-dimethyloct-2-en-1-ol",N/A,3.4,N/A,N/A,CAS 검색 성공: CAS(40607-48-5)
+Dimethyl citraconate,ifra,5355715,617-54-9,C7H10O4,158.15,dimethyl (Z)-2-methylbut-2-enedioate,N/A,0.6,N/A,N/A,CAS 검색 성공: CAS(617-54-9)
+Diphenylamine,ifra,11487,122-39-4,C12H11N,169.22,N-phenylaniline,N/A,3.5,N/A,N/A,CAS 검색 성공: CAS(122-39-4)
+"2,4-Dodecadien-1-ol, (2E, 4E)",ifra,6436491,18485-38-6,C12H22O,182.30,"(2E,4E)-dodeca-2,4-dien-1-ol",N/A,4.2,N/A,N/A,CAS 검색 성공: CAS(18485-38-6)
+Esters of 2-Nonynoic acid (except Methyl octine carbonate),ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Esters of 2-Octynoic acid (except Methyl heptine carbonate),ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Ethyl acrylate,ifra,8821,140-88-5,C5H8O2,100.12,ethyl prop-2-enoate,N/A,1.3,N/A,N/A,CAS 검색 성공: CAS(140-88-5)
+Ethylene glycol monoethyl ether and its acetate,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Ethylene glycol monomethyl ether and its acetate,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Fig leaf absolute,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Furfuryl alcohol,ifra,7361,98-00-0,C5H6O2,98.10,furan-2-ylmethanol,N/A,0.3,N/A,N/A,CAS 검색 성공: CAS(98-00-0)
+Furfurylidene acetone,ifra,212930,210-774-3,C8H8O2,136.15,4-(furan-2-yl)but-3-en-2-one,N/A,1.4,N/A,N/A,CAS 검색 성공: CAS(623-15-4)
+Geranyl nitrile,ifra,21768,225-918-0,C10H15N,149.23,"3,7-dimethylocta-2,6-dienenitrile",N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(5146-66-7)
+trans-2-Heptenal,ifra,5283316,2463-63-0,C7H12O,112.17,(E)-hept-2-enal,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(18829-55-5)
+"2,4-Hexadien-1-ol",ifra,8104,111-28-4,C6H10O,98.14,"hexa-2,4-dien-1-ol",N/A,1.1,N/A,N/A,CAS 검색 성공: CAS(111-28-4)
+Hexahydrocoumarin,ifra,69694,700-82-3,C9H12O2,152.19,"3,4,5,6,7,8-hexahydrochromen-2-one",N/A,1.3,N/A,N/A,CAS 검색 성공: CAS(700-82-3)
+trans-2-Hexenal diethyl acetal,ifra,5365137,67746-30-9,C10H20O2,172.26,"(E)-1,1-diethoxyhex-2-ene",N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(67746-30-9)
+trans-2-Hexenal dimethyl acetal,ifra,6436486,18318-83-7,C8H16O2,144.21,"(E)-1,1-dimethoxyhex-2-ene",N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(18318-83-7)
+"Hydroabietyl alcohol, Dihydroabietyl alcohol",ifra,114506,13393-93-6,C20H36O,292.5,"[(1R,4aR,4bS,10aR)-1,4a-dimethyl-7-propan-2-yl-2,3,4,4b,5,6,7,8,8a,9,10,10a-dodecahydrophenanthren-1-yl]methanol",N/A,6.7,N/A,N/A,CAS 검색 성공: CAS(13393-93-6)
+Hydroquinone monoethyl ether,ifra,12150,210-748-1,C8H10O2,138.16,4-ethoxyphenol,N/A,1.8,N/A,N/A,CAS 검색 성공: CAS(622-62-8)
+Hydroquinone monomethyl ether,ifra,9015,150-76-5,C7H8O2,124.14,4-methoxyphenol,N/A,1.3,N/A,N/A,CAS 검색 성공: CAS(150-76-5)
+Isophorone,ifra,6544,78-59-1,C9H14O,138.21,"3,5,5-trimethylcyclohex-2-en-1-one",N/A,1.6,N/A,N/A,CAS 검색 성공: CAS(78-59-1)
+6-Isopropyl-2-decalol,ifra,94453,34131-99-2,C13H24O,196.33,"6-propan-2-yl-1,2,3,4,4a,5,6,7,8,8a-decahydronaphthalen-2-ol",N/A,4,N/A,N/A,CAS 검색 성공: CAS(34131-99-2)
+Massoia bark oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Massoia lactone,ifra,642793,51154-96-2,C10H16O2,168.23,"(2R)-2-pentyl-2,3-dihydropyran-6-one",N/A,3.1,N/A,N/A,CAS 검색 성공: CAS(54814-64-1)
+7-Methoxycoumarin,ifra,10748,531-59-9,C10H8O3,176.17,7-methoxychromen-2-one,N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(531-59-9)
+α-Methyl anisylidene acetone,ifra,5803450,104-27-8,C12H14O2,190.24,(E)-1-(4-methoxyphenyl)pent-1-en-3-one,N/A,2.5,N/A,N/A,CAS 검색 성공: CAS(104-27-8)
+6-Methylcoumarin,ifra,7092,92-48-8,C10H8O2,160.17,6-methylchromen-2-one,N/A,1.8,N/A,N/A,CAS 검색 성공: CAS(92-48-8)
+7-Methylcoumarin,ifra,17131,2445-83-2,C10H8O2,160.17,7-methylchromen-2-one,N/A,1.8,N/A,N/A,CAS 검색 성공: CAS(2445-83-2)
+Methyl crotonate,ifra,638132,623-43-8,C5H8O2,100.12,methyl (E)-but-2-enoate,N/A,0.9,N/A,N/A,CAS 검색 성공: CAS(623-43-8)
+4-Methyl-7-ethoxycoumarin,ifra,66595,87-05-8,C12H12O3,204.22,7-ethoxy-4-methylchromen-2-one,N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(87-05-8)
+p-Methylhydrocinnamic aldehyde,ifra,64812,5406-12-2,C10H12O,148.20,3-(4-methylphenyl)propanal,N/A,2,N/A,N/A,CAS 검색 성공: CAS(5406-12-2)
+Methyl methacrylate,ifra,6658,80-62-6,C5H8O2,100.12,methyl 2-methylprop-2-enoate,N/A,1.4,N/A,N/A,CAS 검색 성공: CAS(80-62-6)
+3-Methyl-2(3)-nonenenitrile,ifra,5875646,53153-66-5,C10H17N,151.25,(E)-3-methylnon-2-enenitrile,N/A,4,N/A,N/A,CAS 검색 성공: CAS(53153-66-5)
+Musk moskene,ifra,67005,116-66-5,C14H18N2O4,278.30,"1,1,3,3,5-pentamethyl-4,6-dinitro-2H-indene",N/A,4.5,N/A,N/A,CAS 검색 성공: CAS(116-66-5)
+Musk ambrette,ifra,6753,83-66-9,C12H16N2O5,268.27,"1-tert-butyl-2-methoxy-4-methyl-3,5-dinitrobenzene",N/A,3.6,N/A,N/A,CAS 검색 성공: CAS(83-66-9)
+Musk tibetene,ifra,67350,145-39-1,C13H18N2O4,266.29,"1-tert-butyl-3,4,5-trimethyl-2,6-dinitrobenzene",N/A,4.3,N/A,N/A,CAS 검색 성공: CAS(145-39-1)
+Musk xylene,ifra,62329,81-15-2,C12H15N3O6,297.26,"1-tert-butyl-3,5-dimethyl-2,4,6-trinitrobenzene",N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(81-15-2)
+Nitrobenzene,ifra,7416,98-95-3,C6H5NO2,123.11,nitrobenzene,N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(98-95-3)
+2-Pentylidene cyclohexanone,ifra,117600,25677-40-1,C11H18O,166.26,2-pentylidenecyclohexan-1-one,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(25677-40-1)
+Phenyl acetone,ifra,7678,103-79-7,C9H10O,134.17,1-phenylpropan-2-one,N/A,1.4,N/A,N/A,CAS 검색 성공: CAS(103-79-7)
+Phenyl benzoate,ifra,7169,93-99-2,C13H10O2,198.22,phenyl benzoate,N/A,3.6,N/A,N/A,CAS 검색 성공: CAS(93-99-2)
+Pseudoionone,ifra,1757003,141-10-6,C13H20O,192.30,"(3E,5E)-6,10-dimethylundeca-3,5,9-trien-2-one",N/A,3.9,N/A,N/A,CAS 검색 성공: CAS(141-10-6)
+Pseudo methylionones,ifra,94373,26651-96-7,C14H22O,206.32,"7,11-dimethyldodeca-4,6,10-trien-3-one",N/A,4.4,N/A,N/A,CAS 검색 성공: CAS(26651-96-7)
+Quinoline,ifra,7047,91-22-5,C9H7N,129.16,quinoline,N/A,2,N/A,N/A,CAS 검색 성공: CAS(91-22-5)
+"Safrole, Isosafrole and Dihydrosafrole",ifra,5144,94-59-7,C10H10O2,162.18,"5-prop-2-enyl-1,3-benzodioxole",N/A,3,N/A,N/A,CAS 검색 성공: CAS(94-59-7)
+Santolina oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Savin oil,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Toluene,ifra,1140,108-88-3,C7H8,92.14,toluene,N/A,2.7,N/A,N/A,CAS 검색 성공: CAS(108-88-3)
+Sclareol,ifra,163263,515-03-7,C20H36O2,308.5,"(1R,2R,4aS,8aS)-1-[(3R)-3-hydroxy-3-methylpent-4-enyl]-2,5,5,8a-tetramethyl-3,4,4a,6,7,8-hexahydro-1H-naphthalen-2-ol",N/A,4.9,N/A,N/A,CAS 검색 성공: CAS(515-03-7)
+Pinacea derivatives,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Nootkatone,ifra,1268142,4674-50-4,C15H22O,218.33,"(4R,4aS,6R)-4,4a-dimethyl-6-prop-1-en-2-yl-3,4,5,6,7,8-hexahydronaphthalen-2-one",N/A,3.9,N/A,N/A,CAS 검색 성공: CAS(4674-50-4)
+Limonene,ifra,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,3.4,N/A,N/A,CAS 검색 성공: CAS(138-86-3)
+Linalool,ifra,6549,78-70-6,C10H18O,154.25,"3,7-dimethylocta-1,6-dien-3-ol",N/A,2.7,N/A,N/A,CAS 검색 성공: CAS(78-70-6)
+Allyl esters,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Musk ketone,ifra,6669,81-14-1,C14H18N2O5,294.30,"1-(4-tert-butyl-2,6-dimethyl-3,5-dinitrophenyl)ethanone",N/A,3.7,N/A,N/A,CAS 검색 성공: CAS(81-14-1)
+Propenylguaethol,ifra,5354280,94-86-0,C11H14O2,178.23,2-ethoxy-5-[(E)-prop-1-enyl]phenol,N/A,2.9,N/A,N/A,CAS 검색 성공: CAS(94-86-0)
+2-Methoxy-4-propylphenol,ifra,17739,2785-87-7,C10H14O2,166.22,2-methoxy-4-propylphenol,N/A,2.2,N/A,N/A,CAS 검색 성공: CAS(2785-87-7)
+alpha-Bisabolol,ifra,1549992,515-69-5,C15H26O,222.37,(2R)-6-methyl-2-[(1R)-4-methylcyclohex-3-en-1-yl]hept-5-en-2-ol,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(515-69-5)
+p-Tolyl alcohol,ifra,11505,589-18-4,C8H10O,122.16,(4-methylphenyl)methanol,N/A,1.6,N/A,N/A,CAS 검색 성공: CAS(589-18-4)
+p-Isopropylbenzyl alcohol,ifra,325,536-60-7,C10H14O,150.22,(4-propan-2-ylphenyl)methanol,N/A,2.3,N/A,N/A,CAS 검색 성공: CAS(536-60-7)
+"2,6,10-Trimethylundeca-5,9-dien-1-ol",ifra,91116,246-000-6,C14H26O,210.36,"2,6,10-trimethylundeca-5,9-dien-1-ol",N/A,4.5,N/A,N/A,CAS 검색 성공: CAS(24048-14-4)
+Cedrene,ifra,521207,234-257-7,C15H24,204.35,"2,6,6,8-tetramethyltricyclo[5.3.1.01,5]undec-8-ene",N/A,4.6,N/A,N/A,CAS 검색 성공: CAS(11028-42-5)
+4-Phenyl-3-buten-2-ol,ifra,15172,17488-65-2,C10H12O,148.20,4-phenylbut-3-en-2-ol,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(17488-65-2)
+Longifolene,ifra,1796220,475-20-7,C15H24,204.35,"(1R,2S,7S,9S)-3,3,7-trimethyl-8-methylidenetricyclo[5.4.0.02,9]undecane",N/A,5.1,N/A,N/A,CAS 검색 성공: CAS(475-20-7)
+"4-Hydroxy-2,5-dimethyl-3(2H)-furanone",ifra,19309,3658-77-3,C6H8O3,128.13,"4-hydroxy-2,5-dimethylfuran-3-one",N/A,0.7,N/A,N/A,CAS 검색 성공: CAS(3658-77-3)
+Farnesal,ifra,68150,242-957-9,C15H24O,220.35,"3,7,11-trimethyldodeca-2,6,10-trienal",N/A,4.9,N/A,N/A,CAS 검색 성공: CAS(19317-11-4)
+"3,7-Dimethyl-2,6-nonadien-1-al",ifra,5364526,41448-29-7,C11H18O,166.26,"(2E,6E)-3,7-dimethylnona-2,6-dienal",N/A,3.5,N/A,N/A,CAS 검색 성공: CAS(41448-29-7)
+"5,9-Dimethyl-4,8-decadienal",ifra,101854,762-26-5,C12H20O,180.29,"5,9-dimethyldeca-4,8-dienal",N/A,3.5,N/A,N/A,CAS 검색 성공: CAS(762-26-5)
+"3,7-Dimethyl-3,6-octadienal",ifra,108355,55722-59-3,C10H16O,152.23,"3,7-dimethylocta-3,6-dienal",N/A,2.9,N/A,N/A,CAS 검색 성공: CAS(55722-59-3)
+Citronellal,ifra,7794,106-23-0,C10H18O,154.25,"3,7-dimethyloct-6-enal",N/A,3,N/A,N/A,CAS 검색 성공: CAS(106-23-0)
+"4,8-Dimethyl-4,9-decadienal",ifra,116736,71077-31-1,C12H20O,180.29,"4,8-dimethyldeca-4,9-dienal",N/A,3.5,N/A,N/A,CAS 검색 성공: CAS(71077-31-1)
+"cis,trans-4-(Isopropyl)cyclohexanemethanol",ifra,83763,5502-75-0,C10H20O,156.26,(4-propan-2-ylcyclohexyl)methanol,N/A,3,N/A,N/A,CAS 검색 성공: CAS(5502-75-0)
+4-(Isopropyl)-.beta.-methylcyclohexanethanol,ifra,106731,67634-03-1,C12H24O,184.32,2-(4-propan-2-ylcyclohexyl)propan-1-ol,N/A,4.1,N/A,N/A,CAS 검색 성공: CAS(67634-03-1)
+"Cyclohexanemethanol, 2,4-dimethyl-",ifra,109418,68480-15-9,C9H18O,142.24,"(2,4-dimethylcyclohexyl)methanol",N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(68480-15-9)
+"3,3-Dimethyl-5-(2,2,3-trimethyl-3-cyclopenten-1-yl)-4-penten-2-ol",ifra,15984303,107898-54-4,C15H26O,222.37,"(E)-3,3-dimethyl-5-(2,2,3-trimethylcyclopent-3-en-1-yl)pent-4-en-2-ol",N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(107898-54-4)
+"5-(2,2,3-Trimethyl-3-cyclopentenyl)-3-methylpentan-2-ol",ifra,103212,65113-99-7,C14H26O,210.36,"3-methyl-5-(2,2,3-trimethylcyclopent-3-en-1-yl)pentan-2-ol",N/A,3.9,N/A,N/A,CAS 검색 성공: CAS(65113-99-7)
+"alpha,2,2,3-Tetramethylcyclopent-3-ene-1-butyraldehyde",ifra,6455034,65114-03-6,C13H22O,194.31,"2-methyl-4-(2,2,3-trimethylcyclopent-3-en-1-yl)butanal",N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(65114-03-6)
+Isobutyl N-methylanthranylate,ifra,522171,65505-24-0,C12H17NO2,207.27,2-methylpropyl 2-(methylamino)benzoate,N/A,3.6,N/A,N/A,CAS 검색 성공: CAS(65505-24-0)
+p-Methyltetrahydroquinoline,ifra,66678,91-61-2,C10H13N,147.22,"6-methyl-1,2,3,4-tetrahydroquinoline",N/A,2.7,N/A,N/A,CAS 검색 성공: CAS(91-61-2)
+"1,2,3,4-Tetrahydro-4-methylquinoline",ifra,86854,242-977-8,C10H13N,147.22,"4-methyl-1,2,3,4-tetrahydroquinoline",N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(19343-78-3)
+4-(4-Hydroxyphenyl)butan-2-one,ifra,21648,5471-51-2,C10H12O2,164.20,4-(4-hydroxyphenyl)butan-2-one,N/A,1.5,N/A,N/A,CAS 검색 성공: CAS(5471-51-2)
+Mintlactone,ifra,94349,13341-72-5,C10H14O2,166.22,"3,6-dimethyl-5,6,7,7a-tetrahydro-4H-1-benzofuran-2-one",N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(13341-72-5)
+Ethyl isopropyl bicycloheptene-2-carboxylate,ifra,15904484,116044-44-1,C13H20O2,208.30,ethyl 3-propan-2-ylbicyclo[2.2.1]hept-5-ene-2-carboxylate,N/A,3.1,N/A,N/A,CAS 검색 성공: CAS(116044-44-1)
+Tetramethyl bicyclo-2-heptene-2-propionaldehyde,ifra,118112,33885-52-8,C14H22O,206.32,"3-(6,6-dimethyl-2-bicyclo[3.1.1]hept-2-enyl)-2,2-dimethylpropanal",N/A,3.1,N/A,N/A,CAS 검색 성공: CAS(33885-52-8)
+"1-(2,2,6-Trimethylcyclohexyl)-3-hexanol",ifra,116699,70788-30-6,C15H30O,226.40,"1-(2,2,6-trimethylcyclohexyl)hexan-3-ol",N/A,5.2,N/A,N/A,CAS 검색 성공: CAS(70788-30-6)
+1-(2-tert.-Butyl cyclohexyloxy)-2-butanol,ifra,164422,412-300-2,C14H28O2,228.37,1-(2-tert-butylcyclohexyl)oxybutan-2-ol,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(139504-68-0)
+"3,6,7-Trimethyl-2,6-octadienal",ifra,53722795,1891-67-4,C11H18O,166.26,"3,6,7-trimethylocta-2,6-dienal",N/A,3.7,N/A,N/A,CAS 검색 성공: CAS(1891-67-4)
+"2,4,4,7-Tetramethyl-6-octen-3-one",ifra,9815427,74338-72-0,C12H22O,182.30,"2,4,4,7-tetramethyloct-6-en-3-one",N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(74338-72-0)
+2-Cyclohexylidene-2-ortho-tolylacetonitrile,ifra,67367311,916887-53-1,C15H17N,211.30,2-cyclohexylidene-2-(2-methylphenyl)acetonitrile,N/A,4,N/A,N/A,CAS 검색 성공: CAS(916887-53-1)
+Ethyl and Methyl furaneol,ifra,93111,27538-09-6,C7H10O3,142.15,5-ethyl-4-hydroxy-2-methylfuran-3-one,N/A,1.1,N/A,N/A,CAS 검색 성공: CAS(27538-09-6)
+2-Hexylidenecyclohexan-1-one,ifra,86002,16429-07-5,C12H20O,180.29,2-hexylidenecyclohexan-1-one,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(16429-07-5)
+2-Methyl-2-pentenal,ifra,12177,210-789-5,C6H10O,98.14,2-methylpent-2-enal,N/A,1.4,N/A,N/A,CAS 검색 성공: CAS(623-36-9)
+2-Octen-4-one,ifra,5365891,22286-99-3,C8H14O,126.20,(E)-oct-2-en-4-one,N/A,2.1,N/A,N/A,CAS 검색 성공: CAS(4643-27-0)
+Methyl lavender ketone,ifra,106823,67801-33-6,C10H20O2,172.26,3-(hydroxymethyl)nonan-2-one,N/A,2.3,N/A,N/A,CAS 검색 성공: CAS(67801-33-6)
+"3,4,5,6,6-Pentamethylhept-3-en-2-one",ifra,3019018,81786-75-6,C12H22O,182.30,"3,5,6,6-tetramethyl-4-methylideneheptan-2-one",N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(81786-75-6)
+3-Methyl-5-phenylpent-2-enenitrile,ifra,1585264,93893-89-1,C12H13N,171.24,(E)-3-methyl-5-phenylpent-2-enenitrile,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(93893-89-1)
+3-Octen-2-one,ifra,5363229,1669-44-9,C8H14O,126.20,(E)-oct-3-en-2-one,N/A,2.3,N/A,N/A,CAS 검색 성공: CAS(1669-44-9)
+Dimethyl octenone,ifra,102844,2550-11-0,C10H18O,154.25,"4,7-dimethyloct-6-en-3-one",N/A,2.9,N/A,N/A,CAS 검색 성공: CAS(2550-11-0)
+Isopentylcyclohexanone,ifra,27941,16587-71-6,C11H20O,168.28,4-(2-methylbutan-2-yl)cyclohexan-1-one,N/A,2.9,N/A,N/A,CAS 검색 성공: CAS(16587-71-6)
+Woody furan,ifra,57357974,440-030-5,C17H30O,250.4,"2,6,6,7,8,8-hexamethyl-3,3a,4,5,5a,7,8a,8b-octahydro-2H-cyclopenta[g][1]benzofuran",N/A,5.1,N/A,N/A,CAS 검색 성공: CAS(338735-71-0)
+Allyl 3-cyclohexylpropionate,ifra,17617,2705-87-5,C12H20O2,196.29,prop-2-enyl 3-cyclohexylpropanoate,N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(2705-87-5)
+alpha-Amylcinnamicaldehyde diethyl acetal,ifra,5875676,60763-41-9,C18H28O2,276.4,[(E)-2-(diethoxymethyl)hept-1-enyl]benzene,N/A,5.6,N/A,N/A,CAS 검색 성공: CAS(60763-41-9)
+alpha-Amylcinnamicaldehyde dimethyl acetal,ifra,6005821,91-87-2,C16H24O2,248.36,[(E)-2-(dimethoxymethyl)hept-1-enyl]benzene,N/A,4.9,N/A,N/A,CAS 검색 성공: CAS(91-87-2)
+alpha-Cyclohexylidene benzeneacetonitrile,ifra,66327,10461-98-0,C14H15N,197.27,2-cyclohexylidene-2-phenylacetonitrile,N/A,3.6,N/A,N/A,CAS 검색 성공: CAS(10461-98-0)
+5-Hexen-1-yl 2-methylbutanoate,ifra,58240624,155514-23-1,C11H20O2,184.27,hex-5-enyl 2-methylbutanoate,N/A,3.3,N/A,N/A,CAS 검색 성공: CAS(155514-23-1)
+Carvyl acetate,ifra,7335,97-42-7,C12H18O2,194.27,(2-methyl-5-prop-1-en-2-ylcyclohex-2-en-1-yl) acetate,N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(97-42-7)
+cis-3-Heptenyl acetate,ifra,21159742,1576-78-9,C9H16O2,156.22,[(Z)-hept-3-enyl] acetate,N/A,2.4,N/A,N/A,CAS 검색 성공: CAS(1576-78-9)
+cis-3-Hexenyl isovalerate,ifra,5367681,35154-45-1,C11H20O2,184.27,[(Z)-hex-3-enyl] 3-methylbutanoate,N/A,3.2,N/A,N/A,CAS 검색 성공: CAS(35154-45-1)
+cis-3-Hexenyl methyl carbonate,ifra,5365699,67633-96-9,C8H14O3,158.19,[(Z)-hex-3-enyl] methyl carbonate,N/A,2.3,N/A,N/A,CAS 검색 성공: CAS(67633-96-9)
+cis-3-Nonenyl acetate,ifra,71586960,13049-88-2,C11H20O2,184.27,[(Z)-non-3-enyl] acetate,N/A,3.5,N/A,N/A,CAS 검색 성공: CAS(13049-88-2)
+Citronellyl acetate,ifra,9017,150-84-5,C12H22O2,198.30,"3,7-dimethyloct-6-enyl acetate",N/A,3.8,N/A,N/A,CAS 검색 성공: CAS(150-84-5)
+Cyclohexadecanone,ifra,75695,2550-52-9,C16H30O,238.41,cyclohexadecanone,N/A,6.4,N/A,N/A,CAS 검색 성공: CAS(2550-52-9)
+Cyclohexadecenone,ifra,53750858,88642-03-9,C16H28O,236.39,cyclohexadec-2-en-1-one,N/A,6.3,N/A,N/A,CAS 검색 성공: CAS(88642-03-9)
+"1-(2,2,6-Trimethylcyclohexyl)-3-pentanol",ifra,108424,262-115-4,C14H28O,212.37,"1-(2,2,6-trimethylcyclohexyl)pentan-3-ol",N/A,4.9,N/A,N/A,CAS 검색 성공: CAS(60241-52-3)
+(Ethoxymethoxy)-cyclododecane,ifra,94111,58567-11-6,C15H30O2,242.40,ethoxymethoxycyclododecane,N/A,5.5,N/A,N/A,CAS 검색 성공: CAS(58567-11-6)
+"6-Hydroxy-2,6-dimethylheptanal",ifra,20554059,62439-42-3,C9H18O2,158.24,"6-hydroxy-2,6-dimethylheptanal",N/A,1.2,N/A,N/A,CAS 검색 성공: CAS(62439-42-3)
+Isobutyl cinnamate,ifra,778574,122-67-8,C13H16O2,204.26,2-methylpropyl (E)-3-phenylprop-2-enoate,N/A,4,N/A,N/A,CAS 검색 성공: CAS(122-67-8)
+Isoeugenyl acetate,ifra,7137,93-29-8,C12H14O3,206.24,(2-methoxy-4-prop-1-enylphenyl) acetate,N/A,2.4,N/A,N/A,CAS 검색 성공: CAS(93-29-8)
+4-Methyl-1-propan-2-ylbicyclo[2.2.2]oct-2-ene-8-carboxylate,ifra,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Methyl vanillyl ether,ifra,79662,5533-03-9,C9H12O3,168.19,2-methoxy-4-(methoxymethyl)phenol,N/A,0.5,N/A,N/A,CAS 검색 성공: CAS(5533-03-9)
+Myraldyl acetate,ifra,3085812,276-650-6,C15H24O2,236.35,[(1S)-3-(4-methylpent-3-enyl)cyclohex-3-en-1-yl]methyl acetate,N/A,3.7,N/A,N/A,CAS 검색 성공: CAS(72403-67-9)
+Octahydro-dimethylnaphthalene-2-carbaldehyde (mixed isomers),ifra,121232753,68738-94-3,C13H20O,192.30,"8,8-dimethyl-2,4a,5,6,7,8a-hexahydro-1H-naphthalene-2-carbaldehyde",N/A,3.5,N/A,N/A,CAS 검색 성공: CAS(68738-94-3)
+p-Cresol,ifra,2879,106-44-5,C7H8O,108.14,4-methylphenol,N/A,1.9,N/A,N/A,CAS 검색 성공: CAS(106-44-5)
+Phenoxyacetaldehyde,ifra,75033,2120-70-9,C8H8O2,136.15,2-phenoxyacetaldehyde,N/A,1.8,N/A,N/A,CAS 검색 성공: CAS(2120-70-9)
+Carvomenthone,ifra,10997258,207-887-5,C10H18O,154.25,"trans-(2R,5R)-2-methyl-5-propan-2-ylcyclohexan-1-one",N/A,2.7,N/A,N/A,CAS 검색 성공: CAS(499-70-7)
+4-tert-Butylcyclohexanone,ifra,7392,202-678-5,C10H18O,154.25,4-tert-butylcyclohexan-1-one,N/A,2.6,N/A,N/A,CAS 검색 성공: CAS(98-53-3)
+"7-Methoxy-3,7-dimethyloct-1-ene",ifra,103825,53767-86-5,C11H22O,170.29,"7-methoxy-3,7-dimethyloct-1-ene",N/A,3.4,N/A,N/A,CAS 검색 성공: CAS(53767-86-5)
+Methoxycyclododecane,ifra,76334,2986-54-1,C13H26O,198.34,methoxycyclododecane,N/A,4.3,N/A,N/A,CAS 검색 성공: CAS(2986-54-1)
+"3-Acetyl-2,5-dimethylfuran",ifra,61527,10599-70-9,C8H10O2,138.16,"1-(2,5-dimethylfuran-3-yl)ethanone",N/A,1.5,N/A,N/A,CAS 검색 성공: CAS(10599-70-9)
+"2,5-Octadien-4-one, 5,6,7-trimethyl-, (2E)-",ifra,71447274,1093229-44-7,C11H18O,166.26,"5,6,7-trimethylocta-2,5-dien-4-one",N/A,3.4,N/A,N/A,"검색어: '2,5-Octadien-4-one, 5,6,7-trimethyl-, (2E)-'"
+Alpine Lavender,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Apple,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Bamboo,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Basil,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Bay leaf,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Bergamot,master,8294,115-95-7,C12H20O2,196.29,"3,7-dimethylocta-1,6-dien-3-yl acetate",N/A,3.3,N/A,N/A,검색어: 'Linalyl acetate'
+Bitter Lemon,master,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,3.4,N/A,N/A,검색어: 'Limonene'
+Cassis Fruits,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Clove,master,3314,97-53-0,C10H12O2,164.20,2-methoxy-4-prop-2-enylphenol,N/A,2,N/A,N/A,검색어: 'Eugenol'
+Fig,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Galbanum Plant,master,15837102,N/A,C10H16,136.23,"2,6,6-trimethylbicyclo[3.1.1]hept-1-ene",N/A,2.6,N/A,N/A,검색어: 'Pinene'
+Grapefruit,master,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,3.4,N/A,N/A,검색어: 'Limonene'
+Green Note,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Green Tea,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Lime,master,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,3.4,N/A,N/A,검색어: 'Limonene'
+May Rose,master,6054,60-12-8,C8H10O,122.16,2-phenylethanol,N/A,1.4,N/A,N/A,검색어: 'Phenyl ethyl alcohol'
+Orange,master,22311,138-86-3,C10H16,136.23,1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,3.4,N/A,N/A,검색어: 'Limonene'
+Peach,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Rosewood,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Tangerine,master,440917,5989-27-5,C10H16,136.23,(4R)-1-methyl-4-prop-1-en-2-ylcyclohexene,N/A,3.4,N/A,N/A,검색어: 'd-Limonene'
+Aldehydal,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Bitter Orange Flower,master,6549,78-70-6,C10H18O,154.25,"3,7-dimethylocta-1,6-dien-3-ol",N/A,2.7,N/A,N/A,검색어: 'Linalool'
+Blackberry,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Carnation,master,3314,97-53-0,C10H12O2,164.20,2-methoxy-4-prop-2-enylphenol,N/A,2,N/A,N/A,검색어: 'Eugenol'
+Cinnamon,master,637511,104-55-2,C9H8O,132.16,(E)-3-phenylprop-2-enal,N/A,1.9,N/A,N/A,검색어: 'Cinnamic aldehyde'
+Civet Cat Oil,master,5315941,542-46-1,C17H30O,250.4,(9Z)-cycloheptadec-9-en-1-one,N/A,6.1,N/A,N/A,동물성 — 주성분(Civetone) 기준
+Geranium,master,637566,106-24-1,C10H18O,154.25,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",N/A,2.9,N/A,N/A,검색어: 'Geraniol'
+Ginger,master,6434062,29714-87-2,C10H16,136.23,"(3E,5E)-3,7-dimethylocta-1,3,5-triene",N/A,4.1,N/A,N/A,검색어: 'Ocimene'
+Honeysuckle,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Hyacinth,master,244,100-51-6,C7H8O,108.14,phenylmethanol,N/A,1.1,N/A,N/A,검색어: 'Benzyl alcohol'
+Ivy,master,46219816,N/A,C20H12F4N4O,400.3,3-[2-(2-fluorophenyl)pyrazol-3-yl]-1-[3-(trifluoromethyl)phenyl]pyridazin-4-one,N/A,4.5,N/A,N/A,검색어: 'Ivy'
+Jasmin,master,8785,140-11-4,C9H10O2,150.17,benzyl acetate,N/A,2,N/A,N/A,검색어: 'Benzyl acetate'
+Lilac Flowers,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Lily of the Valley,master,6549,78-70-6,C10H18O,154.25,"3,7-dimethylocta-1,6-dien-3-ol",N/A,2.7,N/A,N/A,검색어: 'Linalool'
+Pinewood,master,17100,98-55-5,C10H18O,154.25,2-(4-methylcyclohex-3-en-1-yl)propan-2-ol,N/A,1.8,N/A,N/A,검색어: 'Terpineol'
+Rose Petals,master,637566,106-24-1,C10H18O,154.25,"(2E)-3,7-dimethylocta-2,6-dien-1-ol",N/A,2.9,N/A,N/A,검색어: 'Geraniol'
+Rosemarin,master,64685,507-70-0,C10H18O,154.25,"1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol",N/A,2.7,N/A,N/A,검색어: 'Borneol'
+Sea Scent,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Violet Leaves,master,24680,232-396-8,C13H20O,192.30,"4-(2,6,6-trimethylcyclohex-2-en-1-yl)but-3-en-2-one",N/A,3,N/A,N/A,검색어: 'Ionone'
+Ylang Ylang,master,853433,97-54-1,C10H12O2,164.20,2-methoxy-4-[(E)-prop-1-enyl]phenol,N/A,2.6,N/A,N/A,검색어: 'Isoeugenol'
+Amber,master,10857465,6790-58-5,C16H28O,236.39,"(3aR,5aS,9aS,9bR)-3a,6,6,9a-tetramethyl-2,4,5,5a,7,8,9,9b-octahydro-1H-benzo[e][1]benzofuran",N/A,4.7,N/A,N/A,동물성 — 주성분(Ambroxan) 기준
+Beaver Oil,master,11368680,N/A,C15H23NO2,249.35,"[(3S,6S,9R,9aS)-6-(furan-3-yl)-9-methyl-2,3,4,6,7,8,9,9a-octahydro-1H-quinolizin-3-yl]methanol",N/A,2.3,N/A,N/A,동물성 — 주성분(Castoramine) 기준
+Benzoin,master,8400,119-53-9,C14H12O2,212.24,"2-hydroxy-1,2-diphenylethanone",N/A,2.1,N/A,N/A,검색어: 'Benzoin'
+Cedarwood,master,521207,234-257-7,C15H24,204.35,"2,6,6,8-tetramethyltricyclo[5.3.1.01,5]undec-8-ene",N/A,4.6,N/A,N/A,검색어: 'Cedrene'
+Iris,master,11005,544-63-8,C14H28O2,228.37,tetradecanoic acid,N/A,5.3,N/A,N/A,검색어: 'Myristic acid'
+Moss,master,24680,232-396-8,C13H20O,192.30,"4-(2,6,6-trimethylcyclohex-2-en-1-yl)but-3-en-2-one",N/A,3,N/A,N/A,검색어: 'Ionone'
+Musk,master,7160826,10403-00-6,C16H30O,238.41,(3R)-3-methylcyclopentadecan-1-one,N/A,6.2,N/A,N/A,동물성 — 주성분(Muscone) 기준
+Patchouli,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Sandalwood,master,12315259,73890-74-1,C15H24O,220.35,"(E)-2-methyl-5-[(1S,2S,4R)-2-methyl-3-methylidene-2-bicyclo[2.2.1]heptanyl]pent-2-en-1-ol",N/A,4,N/A,N/A,검색어: 'Santalol'
+Tonka Nut,master,323,91-64-5,C9H6O2,146.14,chromen-2-one,N/A,1.4,N/A,N/A,검색어: 'Coumarin'
+Tuberosa,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Vanilla,master,8467,121-32-4,C9H10O3,166.17,3-ethoxy-4-hydroxybenzaldehyde,N/A,1.6,N/A,N/A,검색어: 'Ethyl vanillin'
+Vetiver,master,101549,201-949-5,C15H24O,220.35,"4,8-dimethyl-2-propan-2-ylidene-3,3a,4,5,6,8a-hexahydro-1H-azulen-6-ol",N/A,3,N/A,N/A,검색어: 'Vetiverol'
+White Musk,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,synthetic_blend — PubChem 수집 불가
+Black tea,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Cherry blossom,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Gardenia,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Jasmin sambae,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Juniper berry,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Leather,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Mimosa,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Peony,master,135465069,1658-56-6,C20H13N2NaO4S,400.4,sodium 4-[(2-hydroxynaphthalen-1-yl)diazenyl]naphthalene-1-sulfonate,N/A,N/A,N/A,N/A,검색어: 'Peony'
+Plumeria,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Tea Rose,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
+Tulip,master,60822,134523-03-8,C66H68CaF2N4O10,1155.3,"calcium bis((3R,5R)-7-[2-(4-fluorophenyl)-3-phenyl-4-(phenylcarbamoyl)-5-propan-2-ylpyrrol-1-yl]-3,5-dihydroxyheptanoate)",N/A,N/A,N/A,N/A,검색어: 'Tulip'
+Verbena,master,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CID not found (CAS/학명/성분/원료명 모두 실패)
