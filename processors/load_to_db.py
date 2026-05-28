@@ -1,93 +1,131 @@
 """
 load_to_db.py
 -------------
-fragrance_ingredients_v4.csv (마스터)
-+ pubchem_raw.csv (PubChem 수집 결과)
-를 병합하여 data/fragrance_db.sqlite 에 적재합니다.
+목적: 모든 수집된 원시 데이터(CSV)를 통합하여 최종 SQLite DB에 적재.
+소스:
+  1. fragrance_ingredients_v4.csv (마스터)
+  2. pubchem_raw.csv (화학 물성 - BP, logP, VP 포함)
+  3. academic_signals.csv (Semantic Scholar)
+  4. reddit_signals.csv (Reddit PRAW)
+  5. ifra_manual.csv (IFRA 규제 - 수동)
+  6. parfumo_data.csv (Parfumo 시장 데이터)
 
-원본 CSV는 절대 수정하지 않습니다.
-병합 결과는 data/processed/ingredients.csv 에도 저장됩니다.
-
-실행 방법:
-    python processors/load_to_db.py
+실행: python processors/load_to_db.py
 """
 
 import pandas as pd
 import sqlite3
 import os
 
-# ── 경로 ──────────────────────────────────────────────────────────────────
+# ── 경로 설정 ─────────────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MASTER_CSV  = os.path.join(BASE_DIR, "data", "raw", "fragrance_ingredients_v4.csv")
 PUBCHEM_CSV = os.path.join(BASE_DIR, "data", "raw", "pubchem_raw.csv")
+SCHOLAR_CSV = os.path.join(BASE_DIR, "data", "raw", "academic_signals.csv")
+REDDIT_CSV  = os.path.join(BASE_DIR, "data", "raw", "reddit_signals.csv")
+IFRA_CSV    = os.path.join(BASE_DIR, "data", "raw", "ifra_data.csv")
+PARFUMO_CSV = os.path.join(BASE_DIR, "data", "raw", "parfumo_data.csv")
+
 PROCESSED   = os.path.join(BASE_DIR, "data", "processed", "ingredients.csv")
 DB_PATH     = os.path.join(BASE_DIR, "data", "fragrance_db.sqlite")
 
 
 def main():
     # 1) 마스터 로드
-    print("[1/5] 마스터 CSV 로드 중...")
+    print("[1/6] 마스터 CSV 로드 중...")
+    if not os.path.exists(MASTER_CSV):
+        print(f"[ERR] 마스터 파일 없음: {MASTER_CSV}")
+        return
     master = pd.read_csv(MASTER_CSV, skiprows=1)
-    print(f"      → {len(master)}개 원료, {len(master.columns)}개 컬럼")
+    print(f"      → {len(master)}개 원료 로드됨")
 
-    # 2) PubChem 데이터 병합
+    merged = master.copy()
+
+    # 2) PubChem 데이터 병합 (물리적 특성 포함)
     if os.path.exists(PUBCHEM_CSV):
-        print("[2/5] PubChem 데이터 병합 중...")
-        pubchem = pd.read_csv(PUBCHEM_CSV)
+        print("[2/6] PubChem 데이터 병합 중...")
+        pc = pd.read_csv(PUBCHEM_CSV)
+        pc_cols = ["name", "pubchem_cid", "cas_number", "molecular_formula", "molecular_weight", 
+                   "iupac_name", "smiles", "logp", "boiling_point", "vapor_pressure"]
+        # 기존 마스터에 해당 컬럼이 있으면 제거 후 새로 병합
+        merged = merged.drop(columns=[c for c in pc_cols[1:] if c in merged.columns], errors="ignore")
+        merged = merged.merge(pc[[c for c in pc_cols if c in pc.columns]], on="name", how="outer")
 
-        # PubChem 컬럼만 추출 (name 키 + 수집 컬럼)
-        pubchem_cols = [
-            "name", "pubchem_cid", "cas_number",
-            "molecular_formula", "molecular_weight",
-            "iupac_name", "smiles", "pubchem_note"
-        ]
-        pubchem = pubchem[[c for c in pubchem_cols if c in pubchem.columns]]
+    # 3) Scholar 학술 데이터 병합
+    if os.path.exists(SCHOLAR_CSV):
+        print("[3/6] Scholar 학술 데이터 병합 중...")
+        sc = pd.read_csv(SCHOLAR_CSV)
+        sc_cols = ["name", "academic_count", "top_citation_count", "latest_paper_year"]
+        merged = merged.merge(sc[[c for c in sc_cols if c in sc.columns]], on="name", how="left")
 
-        # 마스터의 기존 pubchem 컬럼 제거 후 병합
-        drop_cols = [c for c in pubchem_cols[1:] if c in master.columns]
-        master = master.drop(columns=drop_cols, errors="ignore")
-        merged = master.merge(pubchem, on="name", how="left")
-        print(f"      → 병합 완료: {len(merged)}개 원료")
-    else:
-        print("[2/5] pubchem_raw.csv 없음 — PubChem 컬럼은 N/A 유지")
-        merged = master.copy()
+    # 4) Reddit 커뮤니티 데이터 병합
+    if os.path.exists(REDDIT_CSV):
+        print("[4/6] Reddit 커뮤니티 데이터 병합 중...")
+        rd = pd.read_csv(REDDIT_CSV)
+        rd_cols = ["name", "reddit_mentions", "reddit_score"]
+        merged = merged.merge(rd[[c for c in rd_cols if c in rd.columns]], on="name", how="left")
 
-    # 3) 결측값 정리
-    print("[3/5] 결측값 정리 중...")
-    merged = merged.fillna("N/A")
-    # `:` 단독으로 입력된 placeholder 정리
-    for col in merged.columns:
-        merged[col] = merged[col].astype(str).str.strip()
-        merged[col] = merged[col].replace(":", "N/A")
+    # 5) IFRA 규제 데이터 병합
+    if os.path.exists(IFRA_CSV):
+        print("[5/6] IFRA 규제 데이터 병합 중...")
+        ifra = pd.read_csv(IFRA_CSV)
+        ifra_cols = ["name", "ifra_status", "amendment_version",
+                     "category_1_pct","category_2_pct","category_3_pct",
+                     "category_4_pct","category_5a_pct","category_5b_pct",
+                     "category_5c_pct","category_5d_pct","category_6_pct",
+                     "category_7a_pct","category_7b_pct","category_8_pct",
+                     "category_9_pct","category_10a_pct","category_10b_pct",
+                     "category_11a_pct","category_11b_pct","category_12_pct"]
+        merged = merged.merge(ifra[[c for c in ifra_cols if c in ifra.columns]], on="name", how="outer")
 
-    # 4) processed CSV 저장
-    print("[4/5] processed CSV 저장 중...")
-    os.makedirs(os.path.dirname(PROCESSED), exist_ok=True)
-    merged.to_csv(PROCESSED, index=False, encoding="utf-8-sig")
-    print(f"      → {PROCESSED}")
+    # --- 결측치 세부 처리 ---
+    # 1. 수치형 컬럼 정의 (0 또는 None으로 채워 타입 유지)
+    numeric_cols = [
+        "molecular_weight", "logp", "academic_count",
+        "top_citation_count", "reddit_mentions", "reddit_score",
+        "category_1_pct","category_2_pct","category_3_pct",
+        "category_4_pct","category_5a_pct","category_5b_pct",
+        "category_5c_pct","category_5d_pct","category_6_pct",
+        "category_7a_pct","category_7b_pct","category_8_pct",
+        "category_9_pct","category_10a_pct","category_10b_pct",
+        "category_11a_pct","category_11b_pct","category_12_pct"
+    ]
+    for col in numeric_cols:
+        if col in merged.columns:
+            # 숫자로 변환 시도, 실패 시 NaN
+            merged[col] = pd.to_numeric(merged[col], errors="coerce")
+            # 수치형의 기본값은 0 또는 None (여기서는 0으로 처리하여 시각화 용이하게 함)
+            merged[col] = merged[col].fillna(0)
 
-    # 5) SQLite 적재
-    print("[5/5] SQLite 적재 중...")
+    # 2. 텍스트형 컬럼 정의
+    # 나머지는 문자열로 변환하고 N/A 처리
+    text_cols = merged.select_dtypes(include=["object"]).columns
+    for col in text_cols:
+        merged[col] = merged[col].fillna("N/A").astype(str).str.replace(":", "N/A").str.strip()
+
+    # 6) SQLite 적재
+    print("[6/6] SQLite 적재 시작...")
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
+    
+    # [Table 1] ingredients (통합 마스터)
+    merged.to_sql("ingredients", conn, if_exists="replace", index=False)
+    
+    # [Table 2] perfumes (시장 데이터 - Parfumo)
+    if os.path.exists(PARFUMO_CSV):
+        print("      → Parfumo 대용량 데이터 적재 중 (perfumes 테이블)...")
+        parfumo = pd.read_csv(PARFUMO_CSV)
+        parfumo.to_sql("perfumes", conn, if_exists="replace", index=False)
 
-    merged.to_sql(
-        "ingredients",
-        conn,
-        if_exists="replace",   # 기존 테이블 교체
-        index=False
-    )
-
-    # 검증
-    count = pd.read_sql("SELECT COUNT(*) as cnt FROM ingredients", conn).iloc[0]["cnt"]
-    cols  = pd.read_sql("PRAGMA table_info(ingredients)", conn)["name"].tolist()
     conn.close()
 
-    print(f"      → DB: {DB_PATH}")
-    print(f"      → 테이블: ingredients  |  행: {count}  |  컬럼: {len(cols)}")
-    print(f"\n[DONE] 완료!")
-    print(f"       컬럼 목록: {cols}")
+    # Processed CSV 저장 (백업용)
+    os.makedirs(os.path.dirname(PROCESSED), exist_ok=True)
+    merged.to_csv(PROCESSED, index=False, encoding="utf-8-sig")
 
+    print(f"\n[DONE] 파이프라인 통합 완료!")
+    print(f"       최종 DB: {DB_PATH}")
+    print(f"       통합 원료: {len(merged)}행")
 
 if __name__ == "__main__":
     main()
