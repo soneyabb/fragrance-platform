@@ -8,11 +8,6 @@
 
 ---
 
-<!-- Add screenshot or GIF after deployment -->
-<!-- ![Sillage Dashboard](assets/demo.gif) -->
-
----
-
 ## Overview
 
 Fragrance ingredient data is scattered across chemistry databases, regulatory bodies, academic papers, and consumer platforms — with no unified view.
