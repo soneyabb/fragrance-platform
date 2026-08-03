@@ -7,6 +7,9 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
+![Sillage Dashboard](assets/demo.gif)
+---
+
 
 ## Overview
 
